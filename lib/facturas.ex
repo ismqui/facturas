@@ -3,16 +3,12 @@ defmodule Facturas do
   Documentation for Facturas.
   """
 
-  @doc """
-  Hello world.
-
-  ## Examples
-
-      iex> Facturas.hello()
-      :world
-
-  """
-  def hello do
-    :world
+  def lista() do
+    [
+      %{ id: 1,
+        fecha: "2018-12-12",
+        id_cliente: 1,
+        concepto: "servicios informaticos" }
+    ]
   end
 end

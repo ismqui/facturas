@@ -7,7 +7,9 @@ defmodule Facturas.CLI do
   """
 
   def run(argv) do
-    parse_args(argv)
+    argv
+    |> parse_args
+    |> process
   end
 
   @doc """
@@ -22,6 +24,17 @@ defmodule Facturas.CLI do
         -> :help
 
       _ -> :help
-    end 
+    end
+  end
+
+  def process(:help) do
+    IO.puts """
+    utilización: facturas <nolosétodavia>
+    """
+    System.halt(0)
+  end
+
+  def process(:list) do
+    Facturas.lista()
   end
 end
