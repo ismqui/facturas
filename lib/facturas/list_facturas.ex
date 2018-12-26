@@ -43,4 +43,14 @@ defmodule Facturas.ListFacturas do
 
     Enum.reduce(input, [], format_facturas)
   end
+
+  def crear(file) do
+    lista = file
+      |> ListFacturas.load()
+      |> ListFacturas.format_data()
+
+    mayor = Enum.sort(lista, &(&1.id >= &2.id)) |> List.first()
+
+    %ListFacturas{id: mayor.id + 1, lista: lista}
+  end
 end
