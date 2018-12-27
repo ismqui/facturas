@@ -45,7 +45,7 @@ defmodule Facturas.CLI do
     inicio = opts[:di]    || "2000-01-01"
     fin    = opts[:df]    || "3000-01-01"
     file   = opts[:file]  || "facturas.csv"
-    dir    = opts[:dir]   || "/Users/ismqui/elixir"
+    dir    = opts[:dir]   || "/Users/username/elixir"
 
     IO.puts "opciones: #{inicio}, #{fin}, #{file}, #{dir}."
     {inicio, fin, file, dir}
