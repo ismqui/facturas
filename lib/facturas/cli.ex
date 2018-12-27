@@ -17,24 +17,53 @@ defmodule Facturas.CLI do
 
   """
   def parse_args(argv) do
-    parse = OptionParser.parse(argv, switches: [ help: :boolean],
-                                     aliases:  [ h:    :help   ])
+
+    parse = OptionParser.parse(argv, switches: [ help: :boolean,
+                                                 file: :string,
+                                               ],
+                                     aliases:  [ h:    :help,
+                                                 f:    :string
+                                               ])
+
+    IO.inspect(parse)
+
     case parse do
+      { [ file: name ], _, _ }
+        -> { :file, name }
+      { opts, _, _ }
+        -> options(opts)
       { [ help: true ], _, _}
         -> :help
 
-      _ -> :help
+      _ -> IO.inspect(parse)
+           :help
     end
+  end
+
+  def options(opts) do
+    IO.inspect opts
+    inicio = opts[:di]    || "2000-01-01"
+    fin    = opts[:df]    || "3000-01-01"
+    file   = opts[:file]  || "facturas.csv"
+    dir    = opts[:dir]   || "/Users/ismqui/elixir"
+
+    IO.puts "opciones: #{inicio}, #{fin}, #{file}, #{dir}."
+    {inicio, fin, file, dir}
   end
 
   def process(:help) do
     IO.puts """
     utilización: facturas <nolosétodavia>
     """
-    System.halt(0)
+    # System.halt(0)
   end
 
-  def process(:list) do
-    Facturas.lista()
+  def process({:file, name}) do
+    Facturas.ListFacturas.crear(name)
+  end
+
+  def process({inicio, fin, file, dir}) do
+    IO.puts "opciones: #{inicio}, #{fin}, #{file}, #{dir}."
+    Facturas.ListFacturas.crear("#{dir}/#{file}")
   end
 end
