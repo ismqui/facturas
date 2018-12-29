@@ -32,9 +32,9 @@ defmodule Facturas.CLI do
       { [ help: true ], _, _}
       -> :help
 
-      { [ file: name ], _, _ }
-        -> { :file, name }
-        
+      # { [ file: name ], _, _ }
+      #   -> { :file, name }
+      #
       { opts, _, _ }
         -> options(opts)
 
