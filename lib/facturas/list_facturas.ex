@@ -16,7 +16,7 @@ defmodule Facturas.ListFacturas do
     %ListFacturas{ id: lista.id + 1, lista: [ f | lista.lista ] }
   end
 
-  def load(file) do
+  def read(file) do
     file
     |> File.stream!
     |> Stream.map(&String.replace(&1, "\n", ""))
@@ -44,9 +44,9 @@ defmodule Facturas.ListFacturas do
     Enum.reduce(input, [], format_facturas)
   end
 
-  def crear(file) do
+  def load(file) do
     lista = file
-      |> ListFacturas.load()
+      |> ListFacturas.read()
       |> ListFacturas.format_data()
 
     mayor = Enum.sort(lista, &(&1.id >= &2.id)) |> List.first()

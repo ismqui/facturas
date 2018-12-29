@@ -59,11 +59,11 @@ defmodule Facturas.CLI do
   end
 
   def process({:file, name}) do
-    Facturas.ListFacturas.crear(name)
+    Facturas.ListFacturas.load(name)
   end
 
   def process({inicio, fin, file, dir}) do
     IO.puts "opciones: #{inicio}, #{fin}, #{file}, #{dir}."
-    Facturas.ListFacturas.crear("#{dir}/#{file}")
+    Facturas.ListFacturas.load("#{dir}/#{file}")
   end
 end
