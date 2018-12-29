@@ -8,6 +8,7 @@ defmodule Facturas.CLI do
 
   def run(argv) do
     argv
+    |> IO.inspect(label: "Argv")
     |> parse_args
     |> process
   end
@@ -25,15 +26,17 @@ defmodule Facturas.CLI do
                                                  f:    :string
                                                ])
 
-    IO.inspect(parse)
+    IO.inspect(parse, label: "Parse")
 
     case parse do
+      { [ help: true ], _, _}
+      -> :help
+
       { [ file: name ], _, _ }
         -> { :file, name }
+        
       { opts, _, _ }
         -> options(opts)
-      { [ help: true ], _, _}
-        -> :help
 
       _ -> IO.inspect(parse)
            :help
@@ -45,9 +48,8 @@ defmodule Facturas.CLI do
     inicio = opts[:di]    || "2000-01-01"
     fin    = opts[:df]    || "3000-01-01"
     file   = opts[:file]  || "facturas.csv"
-    dir    = opts[:dir]   || "/Users/username/elixir"
+    dir    = opts[:dir]   || "/Users/ismqui/dev/elixir"
 
-    IO.puts "opciones: #{inicio}, #{fin}, #{file}, #{dir}."
     {inicio, fin, file, dir}
   end
 

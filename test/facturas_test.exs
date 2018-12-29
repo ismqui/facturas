@@ -5,8 +5,8 @@ defmodule FacturasTest do
   import Facturas.CLI, only: [ parse_args: 1 ]
 
   test ":help es retornado con la opcion -h y --help" do
-    assert parse_args(["-h",     "anything"]) == :help
-    assert parse_args(["--help", "anything"]) == :help
+    assert parse_args(["-h"]) == :help
+    assert parse_args(["--help"]) == :help
   end
 
   test "lista todas las facturas existentes" do
@@ -20,5 +20,14 @@ defmodule FacturasTest do
       importe: 124.33,
       pagada: true
     }
+  end
+
+  test "carga fichero facturas.csv sin parametros" do
+    datos = Facturas.CLI.run([""])
+    assert datos == %Facturas.ListFacturas{
+                      file: "/Users/ismqui/dev/elixir/facturas.csv",
+                      id: id,
+                      lista: lista
+                    }
   end
 end

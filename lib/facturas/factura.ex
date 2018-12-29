@@ -1,8 +1,17 @@
 defmodule Facturas.Factura do
-  defstruct id: 0, fecha: nil, id_cliente: 0, concepto: "", importe: 0, pagada: false
+  defstruct [
+      id: 0,
+      fecha: nil,
+      id_cliente: 0,
+      concepto: "",
+      importe: 0,
+      pagada: false,
+      irpf: 7,
+      iva: 21
+    ]
 
   alias Facturas.Factura
-  
+
   def new(), do: %Factura{}
 
   def concepto(factura, concepto) do
