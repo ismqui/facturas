@@ -57,7 +57,7 @@ defmodule Facturas.CLI do
 
   def process(:help) do
     IO.puts """
-    utilización: facturas -l [-f nombre_file]
+    utilización: facturas -l [-f nombre_file --di 2018-01-01 --df 2019-01-01 ]
     """
     # System.halt(0)
   end
