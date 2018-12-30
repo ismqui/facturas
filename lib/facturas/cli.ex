@@ -10,6 +10,7 @@ defmodule Facturas.CLI do
     argv
     |> IO.inspect(label: "Argv")
     |> parse_args
+    |> IO.inspect(label: "Parse")
     |> process
   end
 
@@ -23,7 +24,8 @@ defmodule Facturas.CLI do
                                                  file: :string,
                                                ],
                                      aliases:  [ h:    :help,
-                                                 f:    :string
+                                                 l:    :list,
+                                                 f:    :file,
                                                ])
 
     IO.inspect(parse, label: "Parse")
@@ -32,11 +34,14 @@ defmodule Facturas.CLI do
       { [ help: true ], _, _}
       -> :help
 
-      # { [ file: name ], _, _ }
-      #   -> { :file, name }
-      #
-      { opts, _, _ }
-        -> options(opts)
+      { [ list: true ], _, _}
+      -> :list
+
+      { [ file: name, list: true ], _, _}
+      -> {:file, name}
+
+      # { opts, _, _ }
+      #   -> options(opts)
 
       _ -> IO.inspect(parse)
            :help
@@ -55,13 +60,21 @@ defmodule Facturas.CLI do
 
   def process(:help) do
     IO.puts """
-    utilización: facturas <nolosétodavia>
+    utilización: facturas -l [-f nombre_file]
     """
     # System.halt(0)
   end
 
+  def process(:list) do
+    file   = "facturas.csv"
+    dir    = "/Users/ismqui/dev/elixir"
+    Facturas.ListFacturas.load("#{dir}/#{file}")
+  end
+
   def process({:file, name}) do
-    Facturas.ListFacturas.load(name)
+    file   = name
+    dir    = "/Users/ismqui/dev/elixir"
+    Facturas.ListFacturas.load("#{dir}/#{file}")
   end
 
   def process({inicio, fin, file, dir}) do

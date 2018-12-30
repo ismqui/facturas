@@ -31,13 +31,13 @@ defmodule Facturas.ListFacturas do
   def format_data(input) do
     format_facturas = fn(el, acc) ->
       [fecha, id, importe, iva, irpf, pagada, concepto] = String.split(el, ",")
-      fecha = Date.from_iso8601!(fecha)
-      id = String.trim(id) |> String.to_integer
-      importe = String.trim(importe) |> String.to_float
-      iva = String.trim(iva) |> String.to_integer
-      irpf = String.trim(irpf) |> String.to_integer
-      pagada = String.trim(pagada) |> String.to_existing_atom
-      concepto = String.trim(concepto) |> String.replace("\"", "")
+      fecha     = Date.from_iso8601!(fecha)
+      id        = String.trim(id) |> String.to_integer
+      importe   = String.trim(importe) |> String.to_float
+      iva       = String.trim(iva) |> String.to_integer
+      irpf      = String.trim(irpf) |> String.to_integer
+      pagada    = String.trim(pagada) |> String.to_existing_atom
+      concepto  = String.trim(concepto) |> String.replace("\"", "")
 
       factura = %Factura{
         id: id,
@@ -74,7 +74,8 @@ defmodule Facturas.ListFacturas do
   def new_name_file(name) do
     fecha = DateTime.utc_now
     ext = "#{fecha.year}#{fecha.month}#{fecha.day}#{fecha.hour}#{fecha.minute}#{fecha.second}"
-    String.slice(name, 0..-4)<>"#{ext}.csv"
+    # String.slice(name, 0..-4)<>"#{ext}.csv"
+    "facturas."<>"#{ext}.csv"
   end
 
   def lista_pagadas(%ListFacturas{file: file, id: id, lista: lista} = lista_fact) do
