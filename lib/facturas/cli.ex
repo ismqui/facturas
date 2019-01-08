@@ -29,21 +29,23 @@ defmodule Facturas.CLI do
                                                ])
 
     case parse do
-      { [ help: true ], _, _}
-      -> :help
+      {[help: true], _, _} ->
+        :help
 
-      { [ list: true ], _, _}
-      -> :list
+      {[list: true], _, _} ->
+        :list
 
-      { [ file: name, list: true ], _, _}
-      -> {:file, name}
+      {[file: name, list: true], _, _} ->
+        {:file, name}
 
-      { opts, _, _ }
-        -> {:options, opts}
+      {opts, _, _} ->
+        {:options, opts}
 
-      _ -> IO.inspect(parse)
-           :help
+      _ ->
+        IO.inspect(parse)
+        :help
     end
+
   end
 
   def process({:options, opts}) do

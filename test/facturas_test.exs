@@ -24,10 +24,12 @@ defmodule FacturasTest do
 
   test "carga fichero facturas.csv sin parametros" do
     datos = Facturas.CLI.run([""])
+
     assert datos == %Facturas.ListFacturas{
-                      file: "/Users/ismqui/dev/elixir/facturas.csv",
-                      id: id,
-                      lista: lista
-                    }
+             file: "/Users/ismqui/dev/elixir/facturas.csv",
+             id: id,
+             lista: lista
+           }
   end
+
 end
