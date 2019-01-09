@@ -4,6 +4,9 @@ defmodule FacturasTest do
 
   import Facturas.CLI, only: [ parse_args: 1 ]
 
+#
+# Test de Facturas.Factura
+#
   alias Facturas.Factura
 
   test "Crea factura" do
@@ -34,6 +37,69 @@ defmodule FacturasTest do
     assert Map.get(factura, :id_cliente) == 200
   end
 
+  test "Modificar id de factura" do
+    factura =
+      Factura.new
+        |> Factura.id(22300)
+
+    assert Map.get(factura, :id) == 22300
+  end
+
+  test "Modificar importe de factura y redondeo" do
+    factura =
+      Factura.new
+        |> Factura.importe(234.2260)
+
+    assert Map.get(factura, :importe) == 234.23
+  end
+
+  test "Modificar iva de factura y redondeo" do
+    factura =
+      Factura.new
+        |> Factura.iva(23.2360)
+
+    assert Map.get(factura, :iva) == 23.24
+  end
+
+  test "Modificar irpf de factura y redondeo" do
+    factura =
+      Factura.new
+        |> Factura.irpf(23.2360)
+
+    assert Map.get(factura, :irpf) == 23.24
+  end
+
+  test "Modificar pagada" do
+    factura =
+      Factura.new
+        |> Factura.pagada(true)
+
+    assert Map.get(factura, :pagada) == true
+  end
+
+  test "Modificar fecha factura al dia de hoy" do
+    date = Date.utc_today
+
+    factura =
+      Factura.new
+        |> Factura.today
+
+    assert Map.get(factura, :fecha) == date
+  end
+
+  test "Datos por defecto son correctos" do
+    factura = Factura.new
+
+    assert Map.get(factura, :concepto) == ""
+    assert Map.get(factura, :fecha) == nil
+    assert Map.get(factura, :id) == 0
+    assert Map.get(factura, :id_cliente) == 0
+    assert Map.get(factura, :importe) == 0
+    assert Map.get(factura, :irpf) == 7
+    assert Map.get(factura, :iva) == 21
+    assert Map.get(factura, :pagada) == false
+  end
+
   test "crear factura" do
     # lista_fact = Facturas.ListFacturas.new()
     factura    = Facturas.Factura.crear("2018-12-12", 1, 124.33, true, "Test Facturas")
@@ -43,7 +109,9 @@ defmodule FacturasTest do
       fecha: ~D[2018-12-12],
       id_cliente: 1,
       importe: 124.33,
-      pagada: true
+      pagada: true,
+      irpf: 7,
+      iva: 21
     }
   end
 

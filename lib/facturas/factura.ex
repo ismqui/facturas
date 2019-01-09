@@ -24,7 +24,7 @@ defmodule Facturas.Factura do
   end
 
   def today(factura) do
-    date = DateTime.utc_now |> DateTime.to_date
+    date = Date.utc_today
     %Factura{factura | fecha: date }
   end
 
@@ -37,7 +37,15 @@ defmodule Facturas.Factura do
   end
 
   def importe(factura, importe) do
-    %Factura{factura | importe: importe }
+    %Factura{factura | importe: Float.round(importe,2) }
+  end
+
+  def irpf(factura, irpf) do
+    %Factura{factura | irpf: Float.round(irpf,2) }
+  end
+
+  def iva(factura, iva) do
+    %Factura{factura | iva: Float.round(iva,2) }
   end
 
   def pagada(factura, pagada) do
@@ -51,15 +59,6 @@ defmodule Facturas.Factura do
     |> Factura.importe(importe)
     |> Factura.pagada(pagada)
     |> Factura.concepto(concepto)
-
-    # %Factura{
-    #   id: 0,
-    #   fecha: fecha,
-    #   id_cliente: id_cliente,
-    #   importe: importe,
-    #   pagada: pagada,
-    #   concepto: concepto
-    # }
   end
 
 end
