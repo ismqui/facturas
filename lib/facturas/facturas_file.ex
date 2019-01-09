@@ -51,7 +51,6 @@ defmodule Facturas.FacturasFile do
     lista = file
       |> FacturasFile.read()
       |> FacturasFile.format_data()
-      |> IO.inspect(label: "load")
 
     mayor = Enum.sort(lista, &(&1.id >= &2.id)) |> List.first()
 
