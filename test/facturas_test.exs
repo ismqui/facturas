@@ -115,6 +115,118 @@ defmodule FacturasTest do
     }
   end
 
+#
+# Test FacturasList
+#
+alias Facturas.FacturasList
+
+  test "Crea nueva lista con valores por defecto" do
+    assert FacturasList.new == %FacturasList{ id: 1, lista: [] }
+  end
+
+  test "add factura a lista añade factura y modifica los id de factura y lista" do
+    f = Factura.new()
+    list =
+      FacturasList.new()
+      |> FacturasList.add_entry(f)
+
+    assert Map.get(list, :id) == 2
+    assert Map.get(list, :lista) == [%{f|id: 1}]
+  end
+
+  test "lista pagadas vacia" do
+    f = Factura.new()
+    list =
+      FacturasList.new()
+      |> FacturasList.add_entry(f)
+
+    assert length(FacturasList.pagadas(list)) == 0
+  end
+
+  test "lista pagadas no vacia" do
+    f = Factura.new()|>Factura.pagada(true)
+
+    list =
+      FacturasList.new()
+      |> FacturasList.add_entry(f)
+
+    assert length(FacturasList.pagadas(list)) == 1
+  end
+
+  test "lista no pagadas no vacia" do
+    f = Factura.new()
+    list =
+      FacturasList.new()
+      |> FacturasList.add_entry(f)
+
+    assert length(FacturasList.no_pagadas(list)) == 1
+  end
+
+  test "lista no pagadas vacia" do
+    f = Factura.new()|>Factura.pagada(true)
+
+    list =
+      FacturasList.new()
+      |> FacturasList.add_entry(f)
+
+    assert length(FacturasList.no_pagadas(list)) == 0
+  end
+
+  test "Calcula el total de pagadas" do
+    f1 = Factura.new() |> Factura.importe(100.10) |> Factura.pagada(true)
+    f2 = Factura.new() |> Factura.importe(100.20) |> Factura.pagada(true)
+    f3 = Factura.new() |> Factura.importe(100.356) |> Factura.pagada(true)
+
+    lista =
+      FacturasList.new()
+      |> FacturasList.add_entry(f1)
+      |> FacturasList.add_entry(f2)
+      |> FacturasList.add_entry(f3)
+
+    assert FacturasList.total_pagadas(lista) == 300.66
+  end
+
+  test "Calcula el total de no pagadas" do
+    f1 = Factura.new() |> Factura.importe(100.10)
+    f2 = Factura.new() |> Factura.importe(100.20)
+    f3 = Factura.new() |> Factura.importe(100.356)
+
+    lista =
+      FacturasList.new()
+      |> FacturasList.add_entry(f1)
+      |> FacturasList.add_entry(f2)
+      |> FacturasList.add_entry(f3)
+
+    assert FacturasList.total_no_pagadas(lista) == 300.66
+  end
+
+  test "Calcula el irpf" do
+    f1 = Factura.new() |> Factura.importe(50.00)
+    f2 = Factura.new() |> Factura.importe(100.00) |> Factura.pagada(true)
+    f3 = Factura.new() |> Factura.importe(50.00)
+
+    lista =
+      FacturasList.new()
+      |> FacturasList.add_entry(f1)
+      |> FacturasList.add_entry(f2)
+      |> FacturasList.add_entry(f3)
+
+    assert FacturasList.irpf(lista) == 14.00
+  end
+
+  test "Calcula el iva" do
+    f1 = Factura.new() |> Factura.importe(50.00)
+    f2 = Factura.new() |> Factura.importe(100.00) |> Factura.pagada(true)
+    f3 = Factura.new() |> Factura.importe(50.00)
+
+    lista =
+      FacturasList.new()
+      |> FacturasList.add_entry(f1)
+      |> FacturasList.add_entry(f2)
+      |> FacturasList.add_entry(f3)
+
+    assert FacturasList.iva(lista) == 42.00
+  end
 
   test ":help es retornado con la opcion -h y --help" do
     assert parse_args(["-h"]) == :help

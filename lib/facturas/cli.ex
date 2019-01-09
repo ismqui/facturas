@@ -49,12 +49,12 @@ defmodule Facturas.CLI do
   end
 
   def process({:options, opts}) do
-    inicio = opts[:di]    || "2000-01-01"
-    fin    = opts[:df]    || "3000-01-01"
+    # inicio = opts[:di]    || "2000-01-01"
+    # fin    = opts[:df]    || "3000-01-01"
     file   = opts[:file]  || "facturas.csv"
     dir    = opts[:dir]   || "/Users/ismqui/dev/elixir"
 
-    Facturas.ListFacturas.load("#{dir}/#{file}")
+    Facturas.FacturasFile.load("#{dir}/#{file}")
   end
 
   def process(:help) do
@@ -67,12 +67,12 @@ defmodule Facturas.CLI do
   def process(:list) do
     file   = "facturas.csv"
     dir    = "/Users/ismqui/dev/elixir"
-    Facturas.ListFacturas.load("#{dir}/#{file}")
+    Facturas.FacturasFile.load("#{dir}/#{file}")
   end
 
   def process({:file, name}) do
     file   = name
     dir    = "/Users/ismqui/dev/elixir"
-    Facturas.ListFacturas.load("#{dir}/#{file}")
+    Facturas.FacturasFile.load("#{dir}/#{file}")
   end
 end
