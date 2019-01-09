@@ -19,6 +19,7 @@ defmodule Facturas.Factura do
   end
 
   def date(factura, date) do
+    {:ok, date} = Date.from_iso8601(date)
     %Factura{factura | fecha: date }
   end
 
@@ -44,14 +45,21 @@ defmodule Facturas.Factura do
   end
 
   def crear(fecha, id_cliente, importe, pagada, concepto) do
-    %Factura{
-      id: 0,
-      fecha: fecha,
-      id_cliente: id_cliente,
-      importe: importe,
-      pagada: pagada,
-      concepto: concepto
-    }
+    Factura.new
+    |> Factura.date(fecha)
+    |> Factura.id_cliente(id_cliente)
+    |> Factura.importe(importe)
+    |> Factura.pagada(pagada)
+    |> Factura.concepto(concepto)
+
+    # %Factura{
+    #   id: 0,
+    #   fecha: fecha,
+    #   id_cliente: id_cliente,
+    #   importe: importe,
+    #   pagada: pagada,
+    #   concepto: concepto
+    # }
   end
 
 end
