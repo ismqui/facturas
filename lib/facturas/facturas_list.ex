@@ -11,42 +11,51 @@ defmodule Facturas.FacturasList do
     %FacturasList{}
   end
 
-  def add_entry(%FacturasList{ id: id, lista: lista} = fact_list, %Factura{} = factura) do
+  def add_entry(%FacturasList{ id: _id, lista: _lista} = fact_list, %Factura{} = factura) do
     f = Factura.id(factura, fact_list.id)
     %FacturasList{ id: fact_list.id + 1, lista: [ f | fact_list.lista ] }
   end
 
-  def pagadas(%FacturasList{ id: id, lista: lista} = lista_fact) do
+  def add_entries(%FacturasList{ id: _id, lista: _lista} = fact_list, []) do
+    fact_list
+  end
+
+  def add_entries(%FacturasList{ id: _id, lista: _lista} = fact_list, [head|tail] ) do
+    add_entry(fact_list, head)
+    |> add_entries(tail)
+  end
+
+  def pagadas(%FacturasList{ id: _id, lista: lista}) do
     lista
     |> Enum.filter(fn x -> x.pagada end)
   end
 
-  def no_pagadas(%FacturasList{ id: id, lista: lista} = lista_fact) do
+  def no_pagadas(%FacturasList{ id: _id, lista: lista}) do
     lista
     |> Enum.filter(fn x -> !x.pagada end)
   end
 
-  def total_pagadas(%FacturasList{ id: id, lista: lista} = lista_fact) do
+  def total_pagadas(%FacturasList{ id: _id, lista: _lista} = lista_fact) do
     lista_fact
       |>pagadas()
       |>Enum.reduce(0, fn x, acc -> x.importe + acc end)
       |>Float.round(2)
   end
 
-  def total_no_pagadas(%FacturasList{ id: id, lista: lista} = lista_fact) do
+  def total_no_pagadas(%FacturasList{ id: _id, lista: _lista} = lista_fact) do
     lista_fact
       |>no_pagadas()
       |>Enum.reduce(0, fn x, acc -> x.importe + acc end)
       |>Float.round(2)
   end
 
-  def irpf(%FacturasList{ id: id, lista: lista} = lista_fact) do
+  def irpf(%FacturasList{ id: _id, lista: lista}) do
     lista
       |>Enum.reduce(0, fn x, acc -> ((x.importe * x.irpf) / 100) + acc end)
       |>Float.round(2)
   end
 
-  def iva(%FacturasList{ id: id, lista: lista} = lista_fact) do
+  def iva(%FacturasList{ id: _id, lista: lista}) do
     lista
       |>Enum.reduce(0, fn x, acc -> ((x.importe * x.iva) / 100) + acc end)
       |>Float.round(2)

@@ -6,9 +6,23 @@ defmodule Facturas.FacturasFile do
 
   alias Facturas.Factura
   alias Facturas.FacturasFile
+  alias Facturas.FacturasList
 
   def new() do
     %FacturasFile{}
+  end
+
+  def new(file, list) do
+
+    f_list =
+      FacturasList.new()
+      |> FacturasList.add_entries(list)
+
+
+    %FacturasFile {
+      file: file,
+      facturas_list: f_list
+    }
   end
 
   def read(file) do
@@ -20,15 +34,16 @@ defmodule Facturas.FacturasFile do
   def format_data(input) do
     format_facturas = fn(el, acc) ->
       [fecha, id, importe, iva, irpf, pagada, concepto] = String.split(el, ",")
+      # formato de la fecha "yyyy-mm-dd" Factura.date(fecha) la convierte en tipo Date.
       # fecha     = Date.from_iso8601!(fecha)
       fecha     = String.trim(fecha)
-      id        = String.trim(id) |> String.to_integer
-      importe   = String.trim(importe) |> String.to_float
-      iva       = String.trim(iva) |> String.to_integer
-      iva       = iva / 1
-      irpf      = String.trim(irpf) |> String.to_integer
-      irpf      = irpf / 1
-      pagada    = String.trim(pagada) |> String.to_existing_atom
+      id        = String.trim(id)       |> String.to_integer
+      importe   = String.trim(importe)  |> String.to_float
+      iva       = String.trim(iva)      |> String.to_integer
+      iva       = iva / 1       # convert the integer into float
+      irpf      = String.trim(irpf)     |> String.to_integer
+      irpf      = irpf / 1      # convert the integer into float
+      pagada    = String.trim(pagada)   |> String.to_existing_atom
       concepto  = String.trim(concepto) |> String.replace("\"", "")
 
       factura =
@@ -41,7 +56,7 @@ defmodule Facturas.FacturasFile do
         |> Factura.pagada(pagada)
         |> Factura.concepto(concepto)
 
-      acc = [ factura | acc ]
+      [ factura | acc ]
     end
 
     Enum.reduce(input, [], format_facturas)
@@ -61,7 +76,7 @@ defmodule Facturas.FacturasFile do
   end
 
   def save_csv( %FacturasFile{file: file, facturas_list: facturas}) do
-    %Facturas.FacturasList{ id: id, lista: lista} = facturas
+    %Facturas.FacturasList{ id: _id, lista: lista} = facturas
     new_file = new_name_file(file)
     lista
       |>Enum.sort(&(&1.id <= &2.id))
