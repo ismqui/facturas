@@ -1,7 +1,7 @@
 # Facturas
 
-**TODO: Refactorizar facturas_file.ex**
-**TODO: Tratamiento de clientes**
+**TODO: Refactorizar facturas_file.ex
+TODO: Tratamiento de clientes**
 
 ## Installation
 
