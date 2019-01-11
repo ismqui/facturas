@@ -1,6 +1,6 @@
 # Facturas
 
-**TODO: Add description**
+**TODO: Refactorizar facturas_file.ex**
 
 ## Installation
 
@@ -19,4 +19,4 @@ Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_do
 and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
 be found at [https://hexdocs.pm/facturas](https://hexdocs.pm/facturas).
 
-# Menlo, Consolas, DejaVu Sans Mono, monospace
+```Menlo, Consolas, DejaVu Sans Mono, monospace
