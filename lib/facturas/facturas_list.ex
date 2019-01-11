@@ -25,26 +25,44 @@ defmodule Facturas.FacturasList do
     |> add_entries(tail)
   end
 
-  def pagadas(%FacturasList{ id: _id, lista: lista}) do
-    lista
-    |> Enum.filter(fn x -> x.pagada end)
+  def pagadas(%FacturasList{ id: id, lista: lista}) do
+    lista =
+      lista
+      |> Enum.filter(fn x -> x.pagada end)
+
+    %FacturasList{
+      id: id,
+      lista: lista
+    }
   end
 
-  def no_pagadas(%FacturasList{ id: _id, lista: lista}) do
-    lista
-    |> Enum.filter(fn x -> !x.pagada end)
+  def no_pagadas(%FacturasList{ id: id, lista: lista}) do
+    lista =
+      lista
+      |> Enum.filter(fn x -> !x.pagada end)
+
+    %FacturasList{
+      id: id,
+      lista: lista
+    }
   end
 
   def total_pagadas(%FacturasList{ id: _id, lista: _lista} = lista_fact) do
-    lista_fact
-      |>pagadas()
+    lista_fact =
+      lista_fact
+        |>pagadas()
+
+    lista_fact.lista
       |>Enum.reduce(0, fn x, acc -> x.importe + acc end)
       |>Float.round(2)
   end
 
   def total_no_pagadas(%FacturasList{ id: _id, lista: _lista} = lista_fact) do
-    lista_fact
-      |>no_pagadas()
+    lista_fact =
+      lista_fact
+        |>no_pagadas()
+
+    lista_fact.lista
       |>Enum.reduce(0, fn x, acc -> x.importe + acc end)
       |>Float.round(2)
   end

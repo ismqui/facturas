@@ -140,7 +140,9 @@ alias Facturas.FacturasList
       FacturasList.new()
       |> FacturasList.add_entry(f)
 
-    assert length(FacturasList.pagadas(list)) == 0
+    list = FacturasList.pagadas(list)
+
+    assert length(list.lista) == 0
   end
 
   test "lista pagadas no vacia" do
@@ -150,7 +152,8 @@ alias Facturas.FacturasList
       FacturasList.new()
       |> FacturasList.add_entry(f)
 
-    assert length(FacturasList.pagadas(list)) == 1
+    list = FacturasList.pagadas(list)
+    assert length(list.lista) == 1
   end
 
   test "lista no pagadas no vacia" do
@@ -159,7 +162,9 @@ alias Facturas.FacturasList
       FacturasList.new()
       |> FacturasList.add_entry(f)
 
-    assert length(FacturasList.no_pagadas(list)) == 1
+    list = FacturasList.no_pagadas(list)
+
+    assert length(list.lista) == 1
   end
 
   test "lista no pagadas vacia" do
@@ -169,7 +174,8 @@ alias Facturas.FacturasList
       FacturasList.new()
       |> FacturasList.add_entry(f)
 
-    assert length(FacturasList.no_pagadas(list)) == 0
+    list = FacturasList.no_pagadas(list)
+    assert length(list.lista) == 0
   end
 
   test "Calcula el total de pagadas" do

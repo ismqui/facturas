@@ -77,11 +77,11 @@ defmodule Facturas.FacturasFile do
 
   def save_csv( %FacturasFile{file: file, facturas_list: facturas}) do
     %Facturas.FacturasList{ id: _id, lista: lista} = facturas
-    new_file = new_name_file(file)
+    # new_file = new_name_file(file)
     lista
       |>Enum.sort(&(&1.id <= &2.id))
       |>Enum.map(fn x -> File.write(
-                   new_file,
+                   file,
                    "#{x.fecha}, #{x.id}, #{x.importe}, #{x.iva}, #{x.irpf}, #{x.pagada}, \"#{x.concepto}\"\n",
                    [:append]
                   )
@@ -93,6 +93,37 @@ defmodule Facturas.FacturasFile do
     ext = "#{fecha.year}#{fecha.month}#{fecha.day}#{fecha.hour}#{fecha.minute}#{fecha.second}"
     # String.slice(name, 0..-4)<>"#{ext}.csv"
     "facturas."<>"#{ext}.csv"
+  end
+
+  def new_name_file(name, ext) do
+    fecha = DateTime.utc_now
+    ext = "#{fecha.year}#{fecha.month}#{fecha.day}#{fecha.hour}#{fecha.minute}#{fecha.second}.#{ext}"
+    # String.slice(name, 0..-4)<>"#{ext}.csv"
+    name<>"."<>"#{ext}"
+  end
+
+  def file(%FacturasFile{file: file, facturas_list: _facturas} = facturas_file) do
+    {name, dir} = String.split(file, "/") |> List.pop_at(-1)
+    [name, ext] = String.split(name, ".")
+    dir = Enum.join(dir, "/")
+    new_name = dir<>"/"<>new_name_file(name, ext)
+    %FacturasFile{facturas_file | file: new_name}
+  end
+
+  def file(%FacturasFile{file: _file, facturas_list: _facturas} = facturas_file, new_name) do
+    %FacturasFile{facturas_file | file: new_name}
+  end
+
+  def pagadas(%FacturasFile{file: file, facturas_list: facturas} = facturas_file) do
+    fl = FacturasList.pagadas(facturas)
+    IO.inspect(fl)
+    {name, dir} = String.split(file, "/") |> List.pop_at(-1)
+    name_ext = String.split(name, ".")
+    name = List.first(name_ext)
+    ext = List.last(name_ext)
+    dir = Enum.join(dir, "/")
+    new_name = dir<>"/"<>new_name_file("pagadas", ext)
+    %FacturasFile{file: new_name, facturas_list: fl}
   end
 
 end
