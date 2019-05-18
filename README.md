@@ -3,6 +3,9 @@
 **TODO:**
 - Refactorizar facturas_file.ex.
 - Tratamiento de clientes.
+- Get values for csv file and directory from environment
+- Create a user logging
+- Transform into a GenServer
 
 ## Installation
 

@@ -40,12 +40,21 @@ defmodule Facturas.CLI do
     IO.puts("\nFinalizando facturación.")
   end
 
-  defp execute_command(["list"],
+  defp execute_command(["list"], facturas) do
+#    %FacturasFile{facturas_list: %FacturasList{ id: _, lista: lista}} = facturas) do
+
+    facturas
+    |> format_output() 
+
+    receive_command(facturas)
+  end
+
+  defp format_output(
     %FacturasFile{facturas_list: %FacturasList{ id: _, lista: lista}} = facturas) do
 
-    cabecera = "\t| id |         concepto          |    importe    |   irpf   |   iva    |" 
-    footer   = "\t|                                |               |          |          |" 
-    linea    = "\t------------------------------------------------------------------------"
+    cabecera = "\t| id |         concepto          |    importe    |   irpf   |   iva    | p |" 
+    footer   = "\t|                                |               |          |          |   |" 
+    linea    = "\t----------------------------------------------------------------------------"
     IO.puts(linea)
     IO.puts(cabecera)
     IO.puts(linea)
@@ -59,28 +68,33 @@ defmodule Facturas.CLI do
                 |> Float.round(2) |> Float.to_string |> String.pad_leading(7, " ")
          irpf = ((reg.irpf * reg.importe)/100)
                 |> Float.round(2) |> Float.to_string |> String.pad_leading(7, " ")
-         IO.puts("\t|#{id} | #{concepto} | #{importe}€ | #{irpf}€ | #{iva}€ |")
+         pagada = if reg.pagada, do: "Y", else: "N"
+         IO.puts("\t|#{id} | #{concepto} | #{importe}€ | #{irpf}€ | #{iva}€ | #{pagada} |")
        end
     )
     IO.puts(linea)
     IO.puts(footer)
     IO.puts(linea)
-
-    receive_command(facturas)
   end
 
   defp execute_command(["pagadas"], %FacturasFile{facturas_list: lista} = facturas) do
-    lista
-    |> FacturasList.pagadas()
-    |> IO.inspect()
+    lista_pagadas =
+      lista
+      |> FacturasList.pagadas()
+
+    %FacturasFile{facturas_list: lista_pagadas}
+    |> format_output() 
 
     receive_command(facturas)
   end
 
   defp execute_command(["nopagadas"], %FacturasFile{facturas_list: lista} = facturas) do
-    lista
-    |> Facturas.FacturasList.no_pagadas()
-    |> IO.inspect()
+    lista_no_pagadas =
+      lista
+      |> Facturas.FacturasList.no_pagadas()
+
+    %FacturasFile{facturas_list: lista_no_pagadas}
+    |> format_output() 
 
     receive_command(facturas)
   end
