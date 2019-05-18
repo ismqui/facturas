@@ -6,19 +6,24 @@ defmodule Facturas.CLI do
   generando la factura
   """
 
+  alias Facturas.FacturasFile
+  alias Facturas.FacturasList
+
   @fichero  "facturas.csv"
   @dir  "/Users/ismqui/dev/elixir"
 
   def main(_args) do
     IO.puts("Bienvenido al programa de facturas")
     print_help_message()
-    Facturas.FacturasFile.load("#{@dir}/#{@fichero}")
+    FacturasFile.load("#{@dir}/#{@fichero}")
     |> receive_command()
   end
 
   @commands %{
-    "quit" => "Quits programa facturas",
+    "quit" => "Finaliza programa facturas",
     "list" => "Lista facturas",
+    "iva" => "Calcula iva facturas",
+    "irpf" => "Calcula irpf facturas",
     "pagadas" => "Lista facturas pagadas",
     "nopagadas" => "Lista facturas NO pagadas"
   }
@@ -36,24 +41,58 @@ defmodule Facturas.CLI do
   end
 
   defp execute_command(["list"],
-       %Facturas.FacturasFile{facturas_list: %Facturas.FacturasList{ id: _, lista: lista}} = facturas) do
+    %FacturasFile{facturas_list: %FacturasList{ id: _, lista: lista}} = facturas) do
+
+    cabecera = "\t| id |         concepto          |    importe    |   irpf   |   iva    |" 
+    linea    = "\t------------------------------------------------------------------------"
+    IO.puts(linea)
+    IO.puts(cabecera)
+    IO.puts(linea)
     lista
-    |> Enum.map(&IO.inspect(&1))
+    |> Enum.map(
+       fn reg -> 
+         id = reg.id |> Integer.to_string |> String.pad_leading(3, "0")
+         concepto = reg.concepto |> String.pad_trailing(25, " ")
+         importe = reg.importe |> Float.to_string |> String.pad_leading(12, " ")
+         iva  = ((reg.iva * reg.importe)/100)
+                |> Float.round(2) |> Float.to_string |> String.pad_leading(7, " ")
+         irpf = ((reg.irpf * reg.importe)/100)
+                |> Float.round(2) |> Float.to_string |> String.pad_leading(7, " ")
+         IO.puts("\t|#{id} | #{concepto} | #{importe}€ | #{irpf}€ | #{iva}€ |")
+       end
+    )
+    IO.puts(linea)
 
     receive_command(facturas)
   end
 
-  defp execute_command(["pagadas"], %Facturas.FacturasFile{facturas_list: lista} = facturas) do
+  defp execute_command(["pagadas"], %FacturasFile{facturas_list: lista} = facturas) do
     lista
-    |> Facturas.FacturasList.pagadas()
+    |> FacturasList.pagadas()
     |> IO.inspect()
 
     receive_command(facturas)
   end
 
-  defp execute_command(["nopagadas"], %Facturas.FacturasFile{facturas_list: lista} = facturas) do
+  defp execute_command(["nopagadas"], %FacturasFile{facturas_list: lista} = facturas) do
     lista
     |> Facturas.FacturasList.no_pagadas()
+    |> IO.inspect()
+
+    receive_command(facturas)
+  end
+
+  defp execute_command(["irpf"], %FacturasFile{facturas_list: lista} = facturas) do
+    lista
+    |> FacturasList.irpf()
+    |> IO.inspect()
+
+    receive_command(facturas)
+  end
+
+  defp execute_command(["iva"], %FacturasFile{facturas_list: lista} = facturas) do
+    lista
+    |> FacturasList.iva()
     |> IO.inspect()
 
     receive_command(facturas)
@@ -69,7 +108,7 @@ defmodule Facturas.CLI do
   defp print_help_message do
     IO.puts("\nEl programa acepta los siguientes comandos:\n")
     @commands
-    |> Enum.map(fn({command, descripcion}) -> IO.puts(" #{command} - #{descripcion}") end)
+    |> Enum.map(fn({command, descripcion}) -> IO.puts(" #{command}        \t - #{descripcion}") end)
   end
 
   def run(argv) do
@@ -120,7 +159,7 @@ defmodule Facturas.CLI do
     file   = opts[:file]  || "facturas.csv"
     dir    = opts[:dir]   || "/Users/ismqui/dev/elixir"
 
-    Facturas.FacturasFile.load("#{dir}/#{file}")
+    FacturasFile.load("#{dir}/#{file}")
   end
 
   def process(:help) do
@@ -133,12 +172,12 @@ defmodule Facturas.CLI do
   def process(:list) do
     file   = "facturas.csv"
     dir    = "/Users/ismqui/dev/elixir"
-    Facturas.FacturasFile.load("#{dir}/#{file}")
+    FacturasFile.load("#{dir}/#{file}")
   end
 
   def process({:file, name}) do
     file   = name
     dir    = "/Users/ismqui/dev/elixir"
-    Facturas.FacturasFile.load("#{dir}/#{file}")
+    FacturasFile.load("#{dir}/#{file}")
   end
 end
