@@ -18,10 +18,10 @@ end
 ```
 
 To generate a CLI script to execute:
-
+```shell
 $> mix escript.build
 $> ./facturas
-
+```
 For now you need a facturas.csv with the format:
 
 - 2018-12-19, 1, 2050.65, 21, 7, true, "Servicios informaticos"
