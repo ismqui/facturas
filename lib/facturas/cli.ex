@@ -44,6 +44,7 @@ defmodule Facturas.CLI do
     %FacturasFile{facturas_list: %FacturasList{ id: _, lista: lista}} = facturas) do
 
     cabecera = "\t| id |         concepto          |    importe    |   irpf   |   iva    |" 
+    footer   = "\t|                                |               |          |          |" 
     linea    = "\t------------------------------------------------------------------------"
     IO.puts(linea)
     IO.puts(cabecera)
@@ -61,6 +62,8 @@ defmodule Facturas.CLI do
          IO.puts("\t|#{id} | #{concepto} | #{importe}€ | #{irpf}€ | #{iva}€ |")
        end
     )
+    IO.puts(linea)
+    IO.puts(footer)
     IO.puts(linea)
 
     receive_command(facturas)
