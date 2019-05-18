@@ -85,6 +85,12 @@ defmodule Facturas.CLI do
     %FacturasFile{facturas_list: lista_pagadas}
     |> format_output() 
 
+    total_pagadas =
+      lista_pagadas
+      |> FacturasList.total()
+
+    IO.puts("\t Total facturas pagadas: #{total_pagadas}")
+
     receive_command(facturas)
   end
 
@@ -95,6 +101,12 @@ defmodule Facturas.CLI do
 
     %FacturasFile{facturas_list: lista_no_pagadas}
     |> format_output() 
+
+    total_no_pagadas =
+      lista_no_pagadas
+      |> FacturasList.total()
+
+    IO.puts("\t Total facturas no pagadas: #{total_no_pagadas}")
 
     receive_command(facturas)
   end
