@@ -40,11 +40,17 @@ defmodule Facturas.CLI do
     IO.puts("\nFinalizando facturación.")
   end
 
-  defp execute_command(["list"], facturas) do
+  defp execute_command(["list"], %FacturasFile{facturas_list: lista} = facturas) do
 #    %FacturasFile{facturas_list: %FacturasList{ id: _, lista: lista}} = facturas) do
 
     facturas
     |> format_output() 
+
+    total=
+      lista
+      |> FacturasList.total()
+
+    IO.puts("\t Total facturas: #{total}")
 
     receive_command(facturas)
   end
