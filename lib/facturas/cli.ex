@@ -6,6 +6,72 @@ defmodule Facturas.CLI do
   generando la factura
   """
 
+  @fichero  "facturas.csv"
+  @dir  "/Users/ismqui/dev/elixir"
+
+  def main(_args) do
+    IO.puts("Bienvenido al programa de facturas")
+    print_help_message()
+    Facturas.FacturasFile.load("#{@dir}/#{@fichero}")
+    |> receive_command()
+  end
+
+  @commands %{
+    "quit" => "Quits programa facturas",
+    "list" => "Lista facturas",
+    "pagadas" => "Lista facturas pagadas",
+    "nopagadas" => "Lista facturas NO pagadas"
+  }
+
+  defp receive_command(facturas \\ nil) do
+    IO.gets("\n>")
+    |> String.trim
+    |> String.downcase
+    |> String.split(" ")
+    |> execute_command(facturas) 
+  end
+
+  defp execute_command(["quit"], _facturas) do
+    IO.puts("\nFinalizando facturación.")
+  end
+
+  defp execute_command(["list"],
+       %Facturas.FacturasFile{facturas_list: %Facturas.FacturasList{ id: _, lista: lista}} = facturas) do
+    lista
+    |> Enum.map(&IO.inspect(&1))
+
+    receive_command(facturas)
+  end
+
+  defp execute_command(["pagadas"], %Facturas.FacturasFile{facturas_list: lista} = facturas) do
+    lista
+    |> Facturas.FacturasList.pagadas()
+    |> IO.inspect()
+
+    receive_command(facturas)
+  end
+
+  defp execute_command(["nopagadas"], %Facturas.FacturasFile{facturas_list: lista} = facturas) do
+    lista
+    |> Facturas.FacturasList.no_pagadas()
+    |> IO.inspect()
+
+    receive_command(facturas)
+  end
+
+  defp execute_command(_unknown, facturas) do
+    IO.puts("\nComando invalido.")
+    print_help_message()
+
+    receive_command(facturas)
+  end
+
+  defp print_help_message do
+    IO.puts("\nEl programa acepta los siguientes comandos:\n")
+    @commands
+    |> Enum.map(fn({command, descripcion}) -> IO.puts(" #{command} - #{descripcion}") end)
+  end
+
   def run(argv) do
     argv
     |> IO.inspect(label: "Argv")

@@ -25,7 +25,7 @@ defmodule Facturas.FacturasFile do
     }
   end
 
-  defp read(file) do
+  def read(file) do
     file
     |> File.stream!
     |> Stream.map(&String.replace(&1, "\n", ""))
