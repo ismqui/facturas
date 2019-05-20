@@ -22,8 +22,6 @@ defmodule Facturas.CLI do
   @commands %{
     "quit" => "Finaliza programa facturas",
     "list" => "Lista facturas",
-    "iva" => "Calcula iva facturas",
-    "irpf" => "Calcula irpf facturas",
     "pagadas" => "Lista facturas pagadas",
     "nopagadas" => "Lista facturas NO pagadas"
   }
@@ -41,25 +39,68 @@ defmodule Facturas.CLI do
   end
 
   defp execute_command(["list"], %FacturasFile{facturas_list: lista} = facturas) do
-#    %FacturasFile{facturas_list: %FacturasList{ id: _, lista: lista}} = facturas) do
+    total = calcula_totales(lista)
 
     facturas
-    |> format_output() 
-
-    total=
-      lista
-      |> FacturasList.total()
-
-    IO.puts("\t Total facturas: #{total}")
+    |> format_output(total.importe, total.iva, total.irpf) 
 
     receive_command(facturas)
   end
 
+  defp execute_command(["pagadas"], %FacturasFile{facturas_list: lista} = facturas) do
+    lista_pagadas =
+      lista
+      |> FacturasList.pagadas()
+
+    total = calcula_totales(lista_pagadas)
+
+    %FacturasFile{facturas_list: lista_pagadas}
+    |> format_output(total.importe, total.iva, total.irpf) 
+
+    receive_command(facturas)
+  end
+
+  defp execute_command(["nopagadas"], %FacturasFile{facturas_list: lista} = facturas) do
+    lista_no_pagadas =
+      lista
+      |> Facturas.FacturasList.no_pagadas()
+
+    total = calcula_totales(lista_no_pagadas)
+
+    %FacturasFile{facturas_list: lista_no_pagadas}
+    |> format_output(total.importe, total.iva, total.irpf) 
+
+    receive_command(facturas)
+  end
+
+  defp execute_command(_unknown, facturas) do
+    IO.puts("\nComando invalido.")
+    print_help_message()
+
+    receive_command(facturas)
+  end
+
+  defp calcula_totales(lista) do
+
+    importe_total=
+      lista
+      |> FacturasList.total()
+    
+    iva_total=
+      lista
+      |> FacturasList.iva()
+
+    irpf_total=
+      lista
+      |> FacturasList.irpf()
+
+    %{importe: importe_total, iva: iva_total, irpf: irpf_total}
+  end
+
   defp format_output(
-    %FacturasFile{facturas_list: %FacturasList{ id: _, lista: lista}} = facturas) do
+    %FacturasFile{facturas_list: %FacturasList{ id: _, lista: lista}} = facturas, importe_total, iva_total, irpf_total) do
 
     cabecera = "\t| id |         concepto          |    importe    |   irpf   |   iva    | p |" 
-    footer   = "\t|                                |               |          |          |   |" 
     linea    = "\t----------------------------------------------------------------------------"
     IO.puts(linea)
     IO.puts(cabecera)
@@ -79,71 +120,20 @@ defmodule Facturas.CLI do
        end
     )
     IO.puts(linea)
-    IO.puts(footer)
+    total_imp  = importe_total |> Float.to_string |> String.pad_leading(12, " ")
+    total_iva  = iva_total |> Float.to_string |> String.pad_leading(7, " ")
+    total_irpf = irpf_total |> Float.to_string |> String.pad_leading(7, " ")
+    IO.puts("\t|    |      Totales              | #{total_imp}€ | #{total_irpf}€ | #{total_iva}€ |   |")
     IO.puts(linea)
-  end
-
-  defp execute_command(["pagadas"], %FacturasFile{facturas_list: lista} = facturas) do
-    lista_pagadas =
-      lista
-      |> FacturasList.pagadas()
-
-    %FacturasFile{facturas_list: lista_pagadas}
-    |> format_output() 
-
-    total_pagadas =
-      lista_pagadas
-      |> FacturasList.total()
-
-    IO.puts("\t Total facturas pagadas: #{total_pagadas}")
-
-    receive_command(facturas)
-  end
-
-  defp execute_command(["nopagadas"], %FacturasFile{facturas_list: lista} = facturas) do
-    lista_no_pagadas =
-      lista
-      |> Facturas.FacturasList.no_pagadas()
-
-    %FacturasFile{facturas_list: lista_no_pagadas}
-    |> format_output() 
-
-    total_no_pagadas =
-      lista_no_pagadas
-      |> FacturasList.total()
-
-    IO.puts("\t Total facturas no pagadas: #{total_no_pagadas}")
-
-    receive_command(facturas)
-  end
-
-  defp execute_command(["irpf"], %FacturasFile{facturas_list: lista} = facturas) do
-    lista
-    |> FacturasList.irpf()
-    |> IO.inspect()
-
-    receive_command(facturas)
-  end
-
-  defp execute_command(["iva"], %FacturasFile{facturas_list: lista} = facturas) do
-    lista
-    |> FacturasList.iva()
-    |> IO.inspect()
-
-    receive_command(facturas)
-  end
-
-  defp execute_command(_unknown, facturas) do
-    IO.puts("\nComando invalido.")
-    print_help_message()
-
-    receive_command(facturas)
   end
 
   defp print_help_message do
     IO.puts("\nEl programa acepta los siguientes comandos:\n")
     @commands
-    |> Enum.map(fn({command, descripcion}) -> IO.puts(" #{command}        \t - #{descripcion}") end)
+    |> Enum.map(fn({c, d}) ->
+       command     = String.pad_trailing(c, 10, " ") 
+       descripcion = String.pad_trailing(d, 26, " ")
+       IO.puts("\t[#{command}] -----> [#{descripcion}]") end)
   end
 
   def run(argv) do
