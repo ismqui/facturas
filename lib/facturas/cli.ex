@@ -130,10 +130,11 @@ defmodule Facturas.CLI do
   defp print_help_message do
     IO.puts("\nEl programa acepta los siguientes comandos:\n")
     @commands
-    |> Enum.map(fn({c, d}) ->
+    |> Enum.with_index(1)
+    |> Enum.map(fn({{c, d}, i}) ->
        command     = String.pad_trailing(c, 10, " ") 
        descripcion = String.pad_trailing(d, 26, " ")
-       IO.puts("\t[#{command}] -----> [#{descripcion}]") end)
+       IO.puts("\t[#{i}] #{command} -----> [#{descripcion}]") end)
   end
 
   def run(argv) do
