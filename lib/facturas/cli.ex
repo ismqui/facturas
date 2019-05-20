@@ -109,15 +109,24 @@ defmodule Facturas.CLI do
     |> Enum.map(
        fn reg -> 
          id = reg.id |> Integer.to_string |> String.pad_leading(3, "0")
-         concepto = reg.concepto |> String.pad_trailing(25, " ")
-         importe = reg.importe |> :erlang.float_to_binary([decimals: 2]) |> String.pad_leading(12, " ")
+
+         concepto = reg.concepto
+                    |> String.pad_trailing(25, " ")
+
+         importe = reg.importe
+                   |> :erlang.float_to_binary([decimals: 2])
+                   |> String.pad_leading(12, " ")
+
          iva  = ((reg.iva * reg.importe)/100)
                 |> :erlang.float_to_binary([decimals: 2]) 
                 |> String.pad_leading(7, " ")
+
          irpf = ((reg.irpf * reg.importe)/100)
                 |> :erlang.float_to_binary([decimals: 2]) 
                 |> String.pad_leading(7, " ")
+
          pagada = if reg.pagada, do: "Y", else: "N"
+
          IO.puts("\t|#{id} | #{concepto} | #{importe}€ | #{irpf}€ | #{iva}€ | #{pagada} |")
        end
     )
