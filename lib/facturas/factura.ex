@@ -56,6 +56,10 @@ defmodule Facturas.Factura do
     factura.pagada
   end
 
+  def get_importe(factura) do
+    factura.importe
+  end
+
   def crear(fecha, id_cliente, importe, pagada, concepto) do
     Factura.new
     |> Factura.date(fecha)

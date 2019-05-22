@@ -49,32 +49,20 @@ defmodule Facturas.FacturasList do
 
   def total(%FacturasList{ id: _id, lista: _lista} = lista_fact) do
     lista_fact.lista
-      |>Enum.reduce(0, fn x, acc -> x.importe + acc end)
+      |>Enum.reduce(0, fn x, acc -> Factura.get_importe(x) + acc end)
       |>Float.round(2)
   end
 
   def total_pagadas(%FacturasList{ id: _id, lista: _lista} = lista_fact) do
-    #lista_fact =
-    #  lista_fact
-    #    |>pagadas()
-
-    #lista_fact.lista
-    #  |>Enum.reduce(0, fn x, acc -> x.importe + acc end)
-    #  |>Float.round(2)
-
     lista_fact
       |>pagadas()
       |>total()
   end
 
   def total_no_pagadas(%FacturasList{ id: _id, lista: _lista} = lista_fact) do
-    lista_fact =
-      lista_fact
-        |>no_pagadas()
-
-    lista_fact.lista
-      |>Enum.reduce(0, fn x, acc -> x.importe + acc end)
-      |>Float.round(2)
+    lista_fact
+      |>no_pagadas()
+      |>total()
   end
 
   def irpf(%FacturasList{ id: _id, lista: lista}) do
