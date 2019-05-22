@@ -60,6 +60,24 @@ defmodule Facturas.Factura do
     factura.importe
   end
 
+  def calcula_iva(%Factura{ importe: importe, iva: iva }) when importe > 0 do
+    ((importe * iva) / 100)
+    |> Float.round(2)
+  end
+
+  def calcula_iva(_factura) do
+    0.0
+  end
+
+  def calcula_irpf(%Factura{ importe: importe, irpf: irpf }) when importe > 0 do
+    ((importe * irpf) / 100)
+    |> Float.round(2)
+  end
+
+  def calcula_irpf(_factura) do
+    0.0
+  end
+
   def crear(fecha, id_cliente, importe, pagada, concepto) do
     Factura.new
     |> Factura.date(fecha)

@@ -67,13 +67,13 @@ defmodule Facturas.FacturasList do
 
   def irpf(%FacturasList{ id: _id, lista: lista}) do
     lista
-      |>Enum.reduce(0, fn x, acc -> ((x.importe * x.irpf) / 100) + acc end)
+      |>Enum.reduce(0, fn x, acc -> Factura.calcula_irpf(x) + acc end)
       |>Float.round(2)
   end
 
   def iva(%FacturasList{ id: _id, lista: lista}) do
     lista
-      |>Enum.reduce(0, fn x, acc -> ((x.importe * x.iva) / 100) + acc end)
+      |>Enum.reduce(0, fn x, acc -> Factura.calcula_iva(x) + acc end)
       |>Float.round(2)
   end
 
