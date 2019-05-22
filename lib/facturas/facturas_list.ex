@@ -28,7 +28,7 @@ defmodule Facturas.FacturasList do
   def pagadas(%FacturasList{ id: id, lista: lista}) do
     lista =
       lista
-      |> Enum.filter(fn x -> x.pagada end)
+      |> Enum.filter(fn x -> Factura.pagada?(x) end)
 
     %FacturasList{
       id: id,
@@ -39,7 +39,7 @@ defmodule Facturas.FacturasList do
   def no_pagadas(%FacturasList{ id: id, lista: lista}) do
     lista =
       lista
-      |> Enum.filter(fn x -> !x.pagada end)
+      |> Enum.filter(fn x -> !Factura.pagada?(x) end)
 
     %FacturasList{
       id: id,

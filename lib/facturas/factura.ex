@@ -52,6 +52,10 @@ defmodule Facturas.Factura do
     %Factura{factura | pagada: pagada }
   end
 
+  def pagada?(factura) do
+    factura.pagada
+  end
+
   def crear(fecha, id_cliente, importe, pagada, concepto) do
     Factura.new
     |> Factura.date(fecha)
