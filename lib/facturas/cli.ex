@@ -12,7 +12,7 @@ defmodule Facturas.CLI do
   @fichero  "facturas.csv"
   @dir  "/Users/ismqui/dev/elixir"
 
-  def main(_args) do
+  def main() do
     IO.puts("Bienvenido al programa de facturas")
     print_help_message()
     FacturasFile.load("#{@dir}/#{@fichero}")
@@ -31,7 +31,7 @@ defmodule Facturas.CLI do
     |> String.trim
     |> String.downcase
     |> String.split(" ")
-    |> execute_command(facturas) 
+    |> execute_command(facturas)
   end
 
   defp execute_command(["quit"], _facturas) do
@@ -42,7 +42,7 @@ defmodule Facturas.CLI do
     total = calcula_totales(lista)
 
     facturas
-    |> format_output(total.importe, total.iva, total.irpf) 
+    |> format_output(total.importe, total.iva, total.irpf)
 
     receive_command(facturas)
   end
@@ -55,7 +55,7 @@ defmodule Facturas.CLI do
     total = calcula_totales(lista_pagadas)
 
     %FacturasFile{facturas_list: lista_pagadas}
-    |> format_output(total.importe, total.iva, total.irpf) 
+    |> format_output(total.importe, total.iva, total.irpf)
 
     receive_command(facturas)
   end
@@ -68,7 +68,7 @@ defmodule Facturas.CLI do
     total = calcula_totales(lista_no_pagadas)
 
     %FacturasFile{facturas_list: lista_no_pagadas}
-    |> format_output(total.importe, total.iva, total.irpf) 
+    |> format_output(total.importe, total.iva, total.irpf)
 
     receive_command(facturas)
   end
@@ -85,7 +85,7 @@ defmodule Facturas.CLI do
     importe_total=
       lista
       |> FacturasList.total()
-    
+
     iva_total=
       lista
       |> FacturasList.iva()
@@ -100,14 +100,14 @@ defmodule Facturas.CLI do
   defp format_output(
     %FacturasFile{facturas_list: %FacturasList{ id: _, lista: lista}} = facturas, importe_total, iva_total, irpf_total) do
 
-    cabecera = "\t| id |         concepto          |    importe    |   irpf   |   iva    | p |" 
+    cabecera = "\t| id |         concepto          |    importe    |   irpf   |   iva    | p |"
     linea    = "\t----------------------------------------------------------------------------"
     IO.puts(linea)
     IO.puts(cabecera)
     IO.puts(linea)
     lista
     |> Enum.map(
-       fn reg -> 
+       fn reg ->
          id = reg.id |> Integer.to_string |> String.pad_leading(3, "0")
 
          concepto = reg.concepto
@@ -118,11 +118,11 @@ defmodule Facturas.CLI do
                    |> String.pad_leading(12, " ")
 
          iva  = ((reg.iva * reg.importe)/100)
-                |> :erlang.float_to_binary([decimals: 2]) 
+                |> :erlang.float_to_binary([decimals: 2])
                 |> String.pad_leading(7, " ")
 
          irpf = ((reg.irpf * reg.importe)/100)
-                |> :erlang.float_to_binary([decimals: 2]) 
+                |> :erlang.float_to_binary([decimals: 2])
                 |> String.pad_leading(7, " ")
 
          pagada = if reg.pagada, do: "Y", else: "N"
@@ -143,7 +143,7 @@ defmodule Facturas.CLI do
     @commands
     |> Enum.with_index(1)
     |> Enum.map(fn({{c, d}, i}) ->
-       command     = String.pad_trailing(c, 10, " ") 
+       command     = String.pad_trailing(c, 10, " ")
        descripcion = String.pad_trailing(d, 26, " ")
        IO.puts("\t[#{i}] #{command} -----> [#{descripcion}]") end)
   end

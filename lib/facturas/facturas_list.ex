@@ -77,4 +77,16 @@ defmodule Facturas.FacturasList do
       |>Float.round(2)
   end
 
+  def date(%FacturasList{ id: id, lista: lista}, date) do
+    lista =
+      lista
+      |> Enum.filter(&Factura.date?(&1, date))
+
+    %FacturasList{
+      id: id,
+      lista: lista
+    }
+  end
+
+
 end

@@ -56,6 +56,11 @@ defmodule Facturas.Factura do
     factura.pagada
   end
 
+  def date?(factura, date) do
+    {:ok, date} = Date.from_iso8601(date)
+    factura.fecha == date
+  end
+
   def get_importe(factura) do
     factura.importe
   end
