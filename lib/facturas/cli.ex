@@ -32,6 +32,7 @@ defmodule Facturas.CLI do
     |> String.trim
     |> String.downcase
     |> String.split(" ")
+    |> IO.inspect
     |> execute_command(facturas)
   end
 
@@ -95,7 +96,7 @@ defmodule Facturas.CLI do
     receive_command(facturas)
   end
 
-  defp calcula_totales(lista) do
+  defp calcula_totales(%FacturasList{lista: facturas} = lista) when length(facturas) > 0 do
 
     importe_total=
       lista
@@ -110,6 +111,10 @@ defmodule Facturas.CLI do
       |> FacturasList.irpf()
 
     %{importe: importe_total, iva: iva_total, irpf: irpf_total}
+  end
+
+  defp calcula_totales(%FacturasList{lista: facturas} = lista) when length(facturas) <= 0 do
+    %{importe: 0.0, iva: 0.0, irpf: 0.0}
   end
 
   defp format_output(
