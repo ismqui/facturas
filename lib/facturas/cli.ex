@@ -12,7 +12,7 @@ defmodule Facturas.CLI do
   @fichero  "facturas.csv"
   @dir  "/Users/ismqui/dev/elixir"
 
-  def main(_) do
+  def main() do
     IO.puts("Bienvenido al programa de facturas")
     print_help_message()
     FacturasFile.load("#{@dir}/#{@fichero}")
