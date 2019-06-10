@@ -23,7 +23,8 @@ defmodule Facturas.CLI do
     "quit" => "Finaliza programa facturas",
     "list" => "Lista facturas",
     "pagadas" => "Lista facturas pagadas",
-    "nopagadas" => "Lista facturas NO pagadas"
+    "nopagadas" => "Lista facturas NO pagadas",
+    "year nnnn" => "Lista facturas del año nnnn"
   }
 
   defp receive_command(facturas \\ nil) do
@@ -73,6 +74,20 @@ defmodule Facturas.CLI do
     receive_command(facturas)
   end
 
+  defp execute_command(["year", _year]= command, %FacturasFile{facturas_list: lista} = facturas) do
+    [_, year] = command
+    lista_year =
+      lista
+      |> Facturas.FacturasList.year(year)
+
+    total = calcula_totales(lista_year)
+
+    %FacturasFile{facturas_list: lista_year}
+    |> format_output(total.importe, total.iva, total.irpf)
+
+    receive_command(facturas)
+  end
+
   defp execute_command(_unknown, facturas) do
     IO.puts("\nComando invalido.")
     print_help_message()
@@ -100,8 +115,8 @@ defmodule Facturas.CLI do
   defp format_output(
     %FacturasFile{facturas_list: %FacturasList{ id: _, lista: lista}} = facturas, importe_total, iva_total, irpf_total) do
 
-    cabecera = "\t| id |         concepto          |    importe    |   irpf   |   iva    | p |"
-    linea    = "\t----------------------------------------------------------------------------"
+    cabecera = "\t| id |         concepto          |    importe    |   irpf   |   iva    | p |    fecha  | "
+    linea    = "\t----------------------------------------------------------------------------------------"
     IO.puts(linea)
     IO.puts(cabecera)
     IO.puts(linea)
@@ -127,7 +142,9 @@ defmodule Facturas.CLI do
 
          pagada = if reg.pagada, do: "Y", else: "N"
 
-         IO.puts("\t|#{id} | #{concepto} | #{importe}€ | #{irpf}€ | #{iva}€ | #{pagada} |")
+         fecha = reg.fecha
+
+         IO.puts("\t|#{id} | #{concepto} | #{importe}€ | #{irpf}€ | #{iva}€ | #{pagada} | #{fecha}")
        end
     )
     IO.puts(linea)

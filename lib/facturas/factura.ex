@@ -61,6 +61,10 @@ defmodule Facturas.Factura do
     factura.fecha == date
   end
 
+  def year?(factura, year) do
+    factura.fecha.year == String.to_integer(year)
+  end
+
   def get_importe(factura) do
     factura.importe
   end

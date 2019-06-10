@@ -47,6 +47,17 @@ defmodule Facturas.FacturasList do
     }
   end
 
+  def year(%FacturasList{ id: id, lista: lista}, year) do
+    lista =
+      lista
+      |> Enum.filter(fn x -> Factura.year?(x, year) end)
+
+    %FacturasList{
+      id: id,
+      lista: lista
+    }
+  end
+
   def total(%FacturasList{ id: _id, lista: _lista} = lista_fact) do
     lista_fact.lista
       |>Enum.reduce(0, fn x, acc -> Factura.get_importe(x) + acc end)
