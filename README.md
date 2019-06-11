@@ -32,9 +32,10 @@ For now you need a facturas.csv with the format:
 - 2018-12-21, 3, 2550.65, 21, 7, true, "Servicios Elixir"
 ```
 also environment variables:
+```shell
 - FACTURAS_FILE = "facturas.csv" # name of file to load
 - FACTURAS_DIR = "." # directory of file
-
+```
 
 Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
 and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
