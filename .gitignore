@@ -22,6 +22,6 @@ erl_crash.dump
 # Ignore package tarball (built via "mix hex.build").
 facturas-*.tar
 *.swp
-facturas
-facturas.csv
+/facturas
+/facturas.csv
 .env
