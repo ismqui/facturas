@@ -23,4 +23,5 @@ erl_crash.dump
 facturas-*.tar
 *.swp
 facturas
+facturas.csv
 .env
