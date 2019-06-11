@@ -15,6 +15,9 @@ defmodule Facturas.CLI do
   def main() do
     IO.puts("Bienvenido al programa de facturas")
     print_help_message()
+    fichero_fact = System.get_env("FACTURAS_FILE") || @fichero
+    dir_fact = System.get_env("FACTURAS_DIR") || @dir
+    IO.puts("#{dir_fact} #{fichero_fact}")
     FacturasFile.load("#{@dir}/#{@fichero}")
     |> receive_command()
   end
