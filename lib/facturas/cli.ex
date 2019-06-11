@@ -116,12 +116,12 @@ defmodule Facturas.CLI do
     %{importe: importe_total, iva: iva_total, irpf: irpf_total}
   end
 
-  defp calcula_totales(%FacturasList{lista: facturas} = lista) when length(facturas) <= 0 do
+  defp calcula_totales(%FacturasList{lista: facturas} = _lista) when length(facturas) <= 0 do
     %{importe: 0.0, iva: 0.0, irpf: 0.0}
   end
 
   defp format_output(
-    %FacturasFile{facturas_list: %FacturasList{ id: _, lista: lista}} = facturas, importe_total, iva_total, irpf_total) do
+    %FacturasFile{facturas_list: %FacturasList{ id: _, lista: lista}} = _facturas, importe_total, iva_total, irpf_total) do
 
     cabecera = "\t| id |         concepto          |    importe    |   irpf   |   iva    | p |    fecha  | "
     linea    = "\t----------------------------------------------------------------------------------------"

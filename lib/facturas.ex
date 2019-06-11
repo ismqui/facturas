@@ -3,6 +3,6 @@ defmodule Facturas do
   Documentation for Facturas.
   """
   # defdelegate inicio(argv\\[""]), to: Facturas.CLI, as: :run
-  defdelegate inicio(), to: Facturas.CLI, as: :main
+  defdelegate inicio(n), to: Facturas.CLI, as: :main
 
 end

@@ -114,12 +114,12 @@ defmodule Facturas.FacturasFile do
     %FacturasFile{facturas_file | file: new_name}
   end
 
-  def pagadas(%FacturasFile{file: file, facturas_list: facturas} = facturas_file) do
+  def pagadas(%FacturasFile{file: file, facturas_list: facturas} = _facturas_file) do
     fl = FacturasList.pagadas(facturas)
     IO.inspect(fl)
     {name, dir} = String.split(file, "/") |> List.pop_at(-1)
     name_ext = String.split(name, ".")
-    name = List.first(name_ext)
+    _name = List.first(name_ext)
     ext = List.last(name_ext)
     dir = Enum.join(dir, "/")
     new_name = dir<>"/"<>new_name_file("pagadas", ext)

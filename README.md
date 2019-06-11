@@ -34,7 +34,7 @@ For now you need a facturas.csv with the format:
 also environment variables:
 ```shell
 - FACTURAS_FILE = "facturas.csv" # name of file to load
-- FACTURAS_DIR = "." # directory of file
+- FACTURAS_DIR = "."             # directory of file
 ```
 
 Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
