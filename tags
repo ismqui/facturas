@@ -1,0 +1,516 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+Address	deps/faker/lib/faker/address.ex	/^defmodule Faker.Address do$/;"	m
+App	deps/faker/lib/faker/app.ex	/^defmodule Faker.App do$/;"	m
+Avatar	deps/faker/lib/faker/avatar.ex	/^defmodule Faker.Avatar do$/;"	m
+Beer	deps/faker/lib/faker/beer.ex	/^defmodule Faker.Beer do$/;"	m
+Bitcoin	deps/faker/lib/faker/bitcoin.ex	/^defmodule Faker.Bitcoin do$/;"	m
+Bitcoin	deps/faker/lib/faker/blockchain/bitcoin.ex	/^defmodule Faker.Blockchain.Bitcoin do$/;"	m
+CLI	lib/facturas/cli.ex	/^defmodule Facturas.CLI do$/;"	m
+Cat	deps/faker/lib/faker/cat.ex	/^defmodule Faker.Cat do$/;"	m
+Code	deps/faker/lib/faker/code.ex	/^defmodule Faker.Code do$/;"	m
+Color	deps/faker/lib/faker/color.ex	/^defmodule Faker.Color do$/;"	m
+Commerce	deps/faker/lib/faker/commerce.ex	/^defmodule Faker.Commerce do$/;"	m
+Company	deps/faker/lib/faker/company.ex	/^defmodule Faker.Company do$/;"	m
+Date	deps/faker/lib/faker/date.ex	/^defmodule Faker.Date do$/;"	m
+DateTime	deps/faker/lib/faker/datetime.ex	/^defmodule Faker.DateTime do$/;"	m
+Elixir	deps/faker/lib/faker/random/elixir.ex	/^defmodule Faker.Random.Elixir do$/;"	m
+En	deps/faker/lib/faker/address/en.ex	/^defmodule Faker.Address.En do$/;"	m
+En	deps/faker/lib/faker/beer/en.ex	/^defmodule Faker.Beer.En do$/;"	m
+En	deps/faker/lib/faker/cat/en.ex	/^defmodule Faker.Cat.En do$/;"	m
+En	deps/faker/lib/faker/color/en.ex	/^defmodule Faker.Color.En do$/;"	m
+En	deps/faker/lib/faker/commerce/en.ex	/^defmodule Faker.Commerce.En do$/;"	m
+En	deps/faker/lib/faker/company/en.ex	/^defmodule Faker.Company.En do$/;"	m
+En	deps/faker/lib/faker/food/en.ex	/^defmodule Faker.Food.En do$/;"	m
+En	deps/faker/lib/faker/industry/en.ex	/^defmodule Faker.Industry.En do$/;"	m
+En	deps/faker/lib/faker/internet/en.ex	/^defmodule Faker.Internet.En do$/;"	m
+En	deps/faker/lib/faker/lorem/shakespeare/en.ex	/^defmodule Faker.Lorem.Shakespeare.En do$/;"	m
+En	deps/faker/lib/faker/name/en.ex	/^defmodule Faker.Name.En do$/;"	m
+En	deps/faker/lib/faker/pokemon/en.ex	/^defmodule Faker.Pokemon.En do$/;"	m
+En	deps/faker/lib/faker/star_wars/en.ex	/^defmodule Faker.StarWars.En do$/;"	m
+En	deps/faker/lib/faker/superhero/en.ex	/^defmodule Faker.Superhero.En do$/;"	m
+En	deps/faker/lib/faker/team/en.ex	/^defmodule Faker.Team.En do$/;"	m
+En	deps/faker/lib/faker/util/en.ex	/^defmodule Faker.Util.En do$/;"	m
+EnGb	deps/faker/lib/faker/phone/en_gb.ex	/^defmodule Faker.Phone.EnGb do$/;"	m
+EnUs	deps/faker/lib/faker/phone/en_us.ex	/^defmodule Faker.Phone.EnUs do$/;"	m
+Es	deps/faker/lib/faker/address/es.ex	/^defmodule Faker.Address.Es do$/;"	m
+Es	deps/faker/lib/faker/color/es.ex	/^defmodule Faker.Color.Es do$/;"	m
+Es	deps/faker/lib/faker/internet/es.ex	/^defmodule Faker.Internet.Es do$/;"	m
+Es	deps/faker/lib/faker/name/es.ex	/^defmodule Faker.Name.Es do$/;"	m
+Factura	lib/facturas/factura.ex	/^defmodule Facturas.Factura do$/;"	m
+Facturas	lib/facturas.ex	/^defmodule Facturas do$/;"	m
+FacturasCSV	lib/facturas/facturas_csv.ex	/^defmodule Facturas.FacturasCSV do$/;"	m
+FacturasFile	lib/facturas/facturas_file.ex	/^defmodule Facturas.FacturasFile do$/;"	m
+FacturasList	lib/facturas/facturas_list.ex	/^defmodule Facturas.FacturasList do$/;"	m
+FacturasTest	test/facturas_test.exs	/^defmodule FacturasTest do$/;"	m
+Faker	deps/faker/lib/faker.ex	/^defmodule Faker do$/;"	m
+File	deps/faker/lib/faker/file.ex	/^defmodule Faker.File do$/;"	m
+Food	deps/faker/lib/faker/food.ex	/^defmodule Faker.Food do$/;"	m
+Iban	deps/faker/lib/faker/code/iban.ex	/^defmodule Faker.Code.Iban do$/;"	m
+Industry	deps/faker/lib/faker/industry.ex	/^defmodule Faker.Industry do$/;"	m
+Internet	deps/faker/lib/faker/internet.ex	/^defmodule Faker.Internet do$/;"	m
+It	deps/faker/lib/faker/address/it.ex	/^defmodule Faker.Address.It do$/;"	m
+It	deps/faker/lib/faker/color/it.ex	/^defmodule Faker.Color.It do$/;"	m
+It	deps/faker/lib/faker/internet/it.ex	/^defmodule Faker.Internet.It do$/;"	m
+It	deps/faker/lib/faker/name/it.ex	/^defmodule Faker.Name.It do$/;"	m
+Lorem	deps/faker/lib/faker/lorem.ex	/^defmodule Faker.Lorem do$/;"	m
+MixProject	mix.exs	/^defmodule Facturas.MixProject do$/;"	m
+Mixfile	deps/faker/mix.exs	/^defmodule Faker.Mixfile do$/;"	m
+NaiveDateTime	deps/faker/lib/faker/naivedatetime.ex	/^defmodule Faker.NaiveDateTime do$/;"	m
+Name	deps/faker/lib/faker/name.ex	/^defmodule Faker.Name do$/;"	m
+Nato	deps/faker/lib/faker/nato.ex	/^defmodule Faker.Nato do$/;"	m
+Pizza	deps/faker/lib/faker/pizza.ex	/^defmodule Faker.Pizza do$/;"	m
+Pokemon	deps/faker/lib/faker/pokemon.ex	/^defmodule Faker.Pokemon do$/;"	m
+PtBr	deps/faker/lib/faker/color/pt_br.ex	/^defmodule Faker.Color.PtBr do$/;"	m
+PtBr	deps/faker/lib/faker/internet/pt_br.ex	/^defmodule Faker.Internet.PtBr do$/;"	m
+PtBr	deps/faker/lib/faker/name/pt_br.ex	/^defmodule Faker.Name.PtBr do$/;"	m
+PtBr	deps/faker/lib/faker/team/pt_br.ex	/^defmodule Faker.Team.PtBr do$/;"	m
+Random	deps/faker/lib/faker/random.ex	/^defmodule Faker.Random do$/;"	m
+Ru	deps/faker/lib/faker/lorem/shakespeare/ru.ex	/^defmodule Faker.Lorem.Shakespeare.Ru do$/;"	m
+Shakespeare	deps/faker/lib/faker/lorem/shakespeare.ex	/^defmodule Faker.Lorem.Shakespeare do$/;"	m
+StarWars	deps/faker/lib/faker/star_wars.ex	/^defmodule Faker.StarWars do$/;"	m
+String	deps/faker/lib/faker/string.ex	/^defmodule Faker.String do$/;"	m
+Superhero	deps/faker/lib/faker/superhero.ex	/^defmodule Faker.Superhero do$/;"	m
+Team	deps/faker/lib/faker/team.ex	/^defmodule Faker.Team do$/;"	m
+Test	deps/faker/lib/faker/random/test.ex	/^defmodule Faker.Random.Test do$/;"	m
+UUID	deps/faker/lib/faker/uuid.ex	/^defmodule Faker.UUID do$/;"	m
+Us	deps/faker/lib/faker/gov/us.ex	/^defmodule Faker.Gov.Us do$/;"	m
+UserAgent	deps/faker/lib/faker/internet/user_agent.ex	/^defmodule Faker.Internet.UserAgent do$/;"	m
+Util	deps/faker/lib/faker/util.ex	/^defmodule Faker.Util do$/;"	m
+__using__	deps/faker/lib/faker/random.ex	/^  defmacro __using__(_) do$/;"	a
+add factura a lista a	test/facturas_test.exs	/^  test "add factura a lista añade factura y modifica los id de factura y lista" do$/;"	t
+add_entries	lib/facturas/facturas_list.ex	/^  def add_entries(%FacturasList{ id: _id, lista: _lista} = fact_list, []) do$/;"	f
+add_entries	lib/facturas/facturas_list.ex	/^  def add_entries(%FacturasList{ id: _id, lista: _lista} = fact_list, [head|tail] ) do$/;"	f
+add_entry	lib/facturas/facturas_list.ex	/^  def add_entry(%FacturasList{ id: _id, lista: _lista} = fact_list, %Factura{} = factura) do$/;"	f
+address	deps/faker/lib/faker/bitcoin.ex	/^  def address(:main) do$/;"	f
+address	deps/faker/lib/faker/bitcoin.ex	/^  def address(:testnet) do$/;"	f
+address	deps/faker/lib/faker/bitcoin.ex	/^  def address(format \\\\ :main)$/;"	f
+address	deps/faker/lib/faker/blockchain/bitcoin.ex	/^  def address(:main) do$/;"	f
+address	deps/faker/lib/faker/blockchain/bitcoin.ex	/^  def address(:testnet) do$/;"	f
+address	deps/faker/lib/faker/blockchain/bitcoin.ex	/^  def address(format \\\\ :main)$/;"	f
+alcohol	deps/faker/lib/faker/beer.ex	/^  def alcohol do$/;"	f
+application	deps/faker/mix.exs	/^  def application do$/;"	f
+application	mix.exs	/^  def application do$/;"	f
+area	deps/faker/lib/faker/gov/us.ex	/^  defp area do$/;"	f
+area_code	deps/faker/lib/faker/phone/en_us.ex	/^  def area_code do$/;"	f
+author	deps/faker/lib/faker/app.ex	/^  def author, do: author(Faker.random_between(0, 1))$/;"	f
+author	deps/faker/lib/faker/app.ex	/^  defp author(0), do: Name.name()$/;"	f
+author	deps/faker/lib/faker/app.ex	/^  defp author(1), do: Company.name()$/;"	f
+backward	deps/faker/lib/faker/date.ex	/^  def backward(days) do$/;"	f
+backward	deps/faker/lib/faker/datetime.ex	/^  def backward(days) do$/;"	f
+backward	deps/faker/lib/faker/naivedatetime.ex	/^  def backward(days) do$/;"	f
+base58	deps/faker/lib/faker/blockchain/bitcoin.ex	/^  defp base58(hash) do$/;"	f
+base64	deps/faker/lib/faker/string.ex	/^  def base64(length \\\\ 8) do$/;"	f
+between	deps/faker/lib/faker/date.ex	/^  def between(from, to) do$/;"	f
+between	deps/faker/lib/faker/datetime.ex	/^  def between(%Date{} = from, %Date{} = to) do$/;"	f
+between	deps/faker/lib/faker/datetime.ex	/^  def between(%NaiveDateTime{} = from, %NaiveDateTime{} = to) do$/;"	f
+between	deps/faker/lib/faker/datetime.ex	/^  def between(from, to) do$/;"	f
+between	deps/faker/lib/faker/naivedatetime.ex	/^  def between(from, to) do$/;"	f
+bg	deps/faker/lib/faker/avatar.ex	/^  defp bg do$/;"	f
+binary_to_hex_list	deps/faker/lib/faker/uuid.ex	/^  defp binary_to_hex_list(binary) do$/;"	f
+blg	deps/faker/lib/faker/beer.ex	/^  def blg do$/;"	f
+bs	deps/faker/lib/faker/company/en.ex	/^  def bs, do: "#{bullshit_prefix()} #{bullshit()} #{bullshit_suffix()}"$/;"	f
+building_number	deps/faker/lib/faker/address/en.ex	/^  def building_number do$/;"	f
+building_number	deps/faker/lib/faker/address/es.ex	/^  def building_number do$/;"	f
+building_number	deps/faker/lib/faker/address/it.ex	/^  def building_number do$/;"	f
+calc_digit_x_index	deps/faker/lib/faker/code.ex	/^  defp calc_digit_x_index({e, i}), do: grapheme_to_digit(e) * (i + 1)$/;"	f
+calc_isbn13	deps/faker/lib/faker/code.ex	/^  defp calc_isbn13({e, _}), do: grapheme_to_digit(e)$/;"	f
+calc_isbn13	deps/faker/lib/faker/code.ex	/^  defp calc_isbn13({e, i}) when rem(i, 2) == 1, do: grapheme_to_digit(e) * 3$/;"	f
+calcula_irpf	lib/facturas/factura.ex	/^  def calcula_irpf(%Factura{ importe: importe, irpf: irpf }) when importe > 0 do$/;"	f
+calcula_irpf	lib/facturas/factura.ex	/^  def calcula_irpf(_factura) do$/;"	f
+calcula_iva	lib/facturas/factura.ex	/^  def calcula_iva(%Factura{ importe: importe, iva: iva }) when importe > 0 do$/;"	f
+calcula_iva	lib/facturas/factura.ex	/^  def calcula_iva(_factura) do$/;"	f
+calcula_totales	lib/facturas/cli.ex	/^  defp calcula_totales(%FacturasList{lista: facturas} = _lista) when length(facturas) <= 0 do$/;"	f
+calcula_totales	lib/facturas/cli.ex	/^  defp calcula_totales(%FacturasList{lista: facturas} = lista) when length(facturas) > 0 do$/;"	f
+calculate_checksum	deps/faker/lib/faker/code/iban.ex	/^  defp calculate_checksum(country_code, bban) do$/;"	f
+callsign	deps/faker/lib/faker/nato.ex	/^  def callsign, do: format("?-?-#")$/;"	f
+catch_phrase	deps/faker/lib/faker/company/en.ex	/^  def catch_phrase, do: "#{buzzword_prefix()} #{buzzword()} #{buzzword_suffix()}"$/;"	f
+cell_number	deps/faker/lib/faker/phone/en_gb.ex	/^  def cell_number do$/;"	f
+character	deps/faker/lib/faker/lorem.ex	/^  defp character do$/;"	f
+characters	deps/faker/lib/faker/lorem.ex	/^  def characters(first..last) do$/;"	f
+characters	deps/faker/lib/faker/lorem.ex	/^  def characters(num) do$/;"	f
+characters	deps/faker/lib/faker/lorem.ex	/^  def characters(range_or_length \\\\ 15..255)$/;"	f
+check_digit	deps/faker/lib/faker/code.ex	/^  defp check_digit(sequence, calc_function, size) do$/;"	f
+city	deps/faker/lib/faker/address/en.ex	/^  def city do$/;"	f
+city	deps/faker/lib/faker/address/en.ex	/^  defp city(0), do: "#{city_prefix()} #{Name.first_name()}"$/;"	f
+city	deps/faker/lib/faker/address/en.ex	/^  defp city(1), do: "#{city_prefix()} #{Name.first_name()}"$/;"	f
+city	deps/faker/lib/faker/address/en.ex	/^  defp city(2), do: "#{Name.first_name()}"$/;"	f
+city	deps/faker/lib/faker/address/en.ex	/^  defp city(3), do: "#{Name.last_name()}"$/;"	f
+city	deps/faker/lib/faker/address/es.ex	/^  def city do$/;"	f
+city	deps/faker/lib/faker/address/es.ex	/^  defp city(0), do: "#{city_prefix()} #{Name.first_name()}"$/;"	f
+city	deps/faker/lib/faker/address/es.ex	/^  defp city(1), do: "#{city_prefix()} #{Name.first_name()}"$/;"	f
+city	deps/faker/lib/faker/address/es.ex	/^  defp city(2), do: "#{Name.first_name()}"$/;"	f
+city	deps/faker/lib/faker/address/es.ex	/^  defp city(3), do: "#{Name.last_name()}"$/;"	f
+city	deps/faker/lib/faker/address/it.ex	/^  def city do$/;"	f
+city	deps/faker/lib/faker/address/it.ex	/^  defp city(0), do: "#{city_prefix()} #{Faker.Name.It.first_name()}"$/;"	f
+city	deps/faker/lib/faker/address/it.ex	/^  defp city(1), do: "#{city_prefix()} #{Faker.Name.It.first_name()} #{city_suffix()}"$/;"	f
+city	deps/faker/lib/faker/address/it.ex	/^  defp city(2), do: "#{Faker.Name.It.first_name()} #{city_suffix()}"$/;"	f
+city	deps/faker/lib/faker/address/it.ex	/^  defp city(3), do: "#{Faker.Name.It.last_name()}"$/;"	f
+concepto	lib/facturas/factura.ex	/^  def concepto(factura, concepto) do$/;"	f
+country	deps/faker/lib/faker.ex	/^  def country do$/;"	f
+crear	lib/facturas/factura.ex	/^  def crear(fecha, id_cliente, importe, pagada, concepto) do$/;"	f
+crear factura	test/facturas_test.exs	/^  test "crear factura" do$/;"	t
+create_file	lib/facturas/facturas_csv.ex	/^  def create_file(_val) do$/;"	f
+create_file	lib/facturas/facturas_csv.ex	/^  def create_file(val) when is_integer(val) and val > 0 do$/;"	f
+cycle	deps/faker/lib/faker/util.ex	/^  def cycle(cycle_pid) do$/;"	f
+cycle_start	deps/faker/lib/faker/util.ex	/^  def cycle_start(items) do$/;"	f
+date	lib/facturas/factura.ex	/^  def date(factura, date) do$/;"	f
+date	lib/facturas/facturas_list.ex	/^  def date(%FacturasList{ id: id, lista: lista}, date) do$/;"	f
+date?	lib/facturas/factura.ex	/^  def date?(factura, date) do$/;"	f
+date_of_birth	deps/faker/lib/faker/date.ex	/^  def date_of_birth(age) when is_integer(age) do$/;"	f
+date_of_birth	deps/faker/lib/faker/date.ex	/^  def date_of_birth(age_or_range \\\\ 18..99)$/;"	f
+date_of_birth	deps/faker/lib/faker/date.ex	/^  def date_of_birth(age_range) do$/;"	f
+date_to_datetime	deps/faker/lib/faker/datetime.ex	/^  defp date_to_datetime(date) do$/;"	f
+deps	deps/faker/mix.exs	/^  defp deps do$/;"	f
+deps	mix.exs	/^  defp deps do$/;"	f
+digit	deps/faker/lib/faker/phone/en_us.ex	/^  defp digit(min, max), do: Faker.random_between(min, max)$/;"	f
+digit	deps/faker/lib/faker/util/en.ex	/^  def digit do$/;"	f
+digit_to_grapheme	deps/faker/lib/faker/code.ex	/^  defp digit_to_grapheme(10, 11), do: "X"$/;"	f
+digit_to_grapheme	deps/faker/lib/faker/code.ex	/^  defp digit_to_grapheme(digit, _), do: Integer.to_string(digit)$/;"	f
+digit_to_grapheme	deps/faker/lib/faker/code.ex	/^  defp digit_to_grapheme(digit, size) when digit == size, do: "0"$/;"	f
+domain_name	deps/faker/lib/faker/internet.ex	/^  def domain_name do$/;"	f
+domain_word	deps/faker/lib/faker/internet.ex	/^  def domain_word do$/;"	f
+email	deps/faker/lib/faker/internet.ex	/^  def email do$/;"	f
+encode_to_bits	deps/faker/lib/faker/address.ex	/^  defp encode_to_bits(lat, lon, bits_length) do$/;"	f
+env	deps/faker/mix.exs	/^  defp env do$/;"	f
+escript	mix.exs	/^  defp escript do$/;"	f
+exchange_code	deps/faker/lib/faker/phone/en_us.ex	/^  def exchange_code do$/;"	f
+execute_command	lib/facturas/cli.ex	/^  defp execute_command(["list"], %FacturasFile{facturas_list: lista} = facturas) do$/;"	f
+execute_command	lib/facturas/cli.ex	/^  defp execute_command(["nopagadas"], %FacturasFile{facturas_list: lista} = facturas) do$/;"	f
+execute_command	lib/facturas/cli.ex	/^  defp execute_command(["pagadas"], %FacturasFile{facturas_list: lista} = facturas) do$/;"	f
+execute_command	lib/facturas/cli.ex	/^  defp execute_command(["quit"], _facturas) do$/;"	f
+execute_command	lib/facturas/cli.ex	/^  defp execute_command(["year", _year]= command, %FacturasFile{facturas_list: lista} = facturas) do$/;"	f
+execute_command	lib/facturas/cli.ex	/^  defp execute_command(_unknown, facturas) do$/;"	f
+extension	deps/faker/lib/faker/phone/en_us.ex	/^  defdelegate extension(n), to: __MODULE__, as: :subscriber_number$/;"	d
+extension	deps/faker/lib/faker/phone/en_us.ex	/^  defdelegate extension, to: __MODULE__, as: :subscriber_number$/;"	d
+file	lib/facturas/facturas_file.ex	/^  def file(%FacturasFile{file: _file, facturas_list: _facturas} = facturas_file, new_name) do$/;"	f
+file	lib/facturas/facturas_file.ex	/^  def file(%FacturasFile{file: file, facturas_list: _facturas} = facturas_file) do$/;"	f
+file_extension	deps/faker/lib/faker/file.ex	/^  def file_extension do$/;"	f
+file_extension	deps/faker/lib/faker/file.ex	/^  def file_extension(category) do$/;"	f
+file_name	deps/faker/lib/faker/file.ex	/^  def file_name do$/;"	f
+file_name	deps/faker/lib/faker/file.ex	/^  def file_name(category) do$/;"	f
+format	deps/faker/lib/faker.ex	/^  def format(str) when is_binary(str) do$/;"	f
+format	deps/faker/lib/faker.ex	/^  defp format("", acc) do$/;"	f
+format	deps/faker/lib/faker.ex	/^  defp format(<<"#"::utf8, tail::binary>>, acc) do$/;"	f
+format	deps/faker/lib/faker.ex	/^  defp format(<<"?"::utf8, tail::binary>>, acc) do$/;"	f
+format	deps/faker/lib/faker.ex	/^  defp format(<<other::utf8, tail::binary>>, acc) do$/;"	f
+format	deps/faker/lib/faker/nato.ex	/^  def format(str) when is_binary(str) do$/;"	f
+format	deps/faker/lib/faker/nato.ex	/^  defp format("", acc) do$/;"	f
+format	deps/faker/lib/faker/nato.ex	/^  defp format(<<"#"::utf8, tail::binary>>, acc) do$/;"	f
+format	deps/faker/lib/faker/nato.ex	/^  defp format(<<"."::utf8, tail::binary>>, acc) do$/;"	f
+format	deps/faker/lib/faker/nato.ex	/^  defp format(<<"?"::utf8, tail::binary>>, acc) do$/;"	f
+format	deps/faker/lib/faker/nato.ex	/^  defp format(<<other::utf8, tail::binary>>, acc) do$/;"	f
+format	deps/faker/lib/faker/util.ex	/^  def format($/;"	f
+format_data	lib/facturas/facturas_file.ex	/^  def format_data(input) do$/;"	f
+format_mac_address	deps/faker/lib/faker/internet.ex	/^  defp format_mac_address(_part) do$/;"	f
+format_output	lib/facturas/cli.ex	/^  defp format_output($/;"	f
+format_replace	deps/faker/lib/faker/util.ex	/^  defp format_replace("%%", _, _, _), do: "%"$/;"	f
+format_replace	deps/faker/lib/faker/util.ex	/^  defp format_replace(_, "", rule_char, rules) do$/;"	f
+format_replace	deps/faker/lib/faker/util.ex	/^  defp format_replace(_, length_str, rule_char, rules) when is_binary(length_str) do$/;"	f
+format_replace	deps/faker/lib/faker/util.ex	/^  defp format_replace(_, n, rule_char, rules) when is_integer(n) do$/;"	f
+forward	deps/faker/lib/faker/date.ex	/^  def forward(days) do$/;"	f
+forward	deps/faker/lib/faker/datetime.ex	/^  def forward(days) do$/;"	f
+forward	deps/faker/lib/faker/naivedatetime.ex	/^  def forward(days) do$/;"	f
+fragment_to_number	deps/faker/lib/faker/code/iban.ex	/^  defp fragment_to_number(fragment) do$/;"	f
+fragment_to_numeric_string	deps/faker/lib/faker/code/iban.ex	/^  defp fragment_to_numeric_string(""), do: ""$/;"	f
+fragment_to_numeric_string	deps/faker/lib/faker/code/iban.ex	/^  defp fragment_to_numeric_string(<<character::utf8, tail::binary>>) do$/;"	f
+free_email	deps/faker/lib/faker/internet.ex	/^  def free_email do$/;"	f
+geo_to_bits	deps/faker/lib/faker/address.ex	/^  defp geo_to_bits(_, position, _) when position < 0 do$/;"	f
+geo_to_bits	deps/faker/lib/faker/address.ex	/^  defp geo_to_bits(n, position, {gmin, gmax}) do$/;"	f
+geohash	deps/faker/lib/faker/address.ex	/^  def geohash do$/;"	f
+get_extensions_from_category	deps/faker/lib/faker/file.ex	/^  defp get_extensions_from_category(category) do$/;"	f
+get_importe	lib/facturas/factura.ex	/^  def get_importe(factura) do$/;"	f
+get_mimes_from_category	deps/faker/lib/faker/file.ex	/^  defp get_mimes_from_category(category) do$/;"	f
+grapheme_for_last	deps/faker/lib/faker/code.ex	/^  defp grapheme_for_last(checksum, size) do$/;"	f
+grapheme_to_digit	deps/faker/lib/faker/code.ex	/^  defp grapheme_to_digit("X"), do: 10$/;"	f
+grapheme_to_digit	deps/faker/lib/faker/code.ex	/^  defp grapheme_to_digit(str), do: String.to_integer(str)$/;"	f
+group	deps/faker/lib/faker/gov/us.ex	/^  defp group, do: "#{Faker.random_between(1, 99)}" |> String.pad_leading(2, "0")$/;"	f
+iban	deps/faker/lib/faker/code.ex	/^  defdelegate iban(), to: Faker.Code.Iban$/;"	d
+iban	deps/faker/lib/faker/code.ex	/^  defdelegate iban(country_code, prefix_components), to: Faker.Code.Iban$/;"	d
+iban	deps/faker/lib/faker/code.ex	/^  defdelegate iban(country_code_or_codes), to: Faker.Code.Iban$/;"	d
+iban	deps/faker/lib/faker/code/iban.ex	/^  def iban(country_code, prefix_components) when is_atom(country_code) do$/;"	f
+iban	deps/faker/lib/faker/code/iban.ex	/^  def iban(country_code, prefix_components) when is_binary(country_code),$/;"	f
+iban	deps/faker/lib/faker/code/iban.ex	/^  def iban(country_code_or_codes), do: iban(country_code_or_codes, [])$/;"	f
+iban	deps/faker/lib/faker/code/iban.ex	/^  def iban(country_codes, prefix_components) when is_list(country_codes),$/;"	f
+iban	deps/faker/lib/faker/code/iban.ex	/^  def iban, do: iban(Keyword.keys(@iso_iban_specs))$/;"	f
+ibu	deps/faker/lib/faker/beer.ex	/^  def ibu do$/;"	f
+id	lib/facturas/factura.ex	/^  def id(factura, id) do$/;"	f
+id_cliente	lib/facturas/factura.ex	/^  def id_cliente(factura, id_cliente) do$/;"	f
+image_url	deps/faker/lib/faker/avatar.ex	/^  def image_url do$/;"	f
+image_url	deps/faker/lib/faker/avatar.ex	/^  def image_url(slug) do$/;"	f
+image_url	deps/faker/lib/faker/avatar.ex	/^  def image_url(slug, width, height)$/;"	f
+image_url	deps/faker/lib/faker/avatar.ex	/^  def image_url(width, height)$/;"	f
+image_url	deps/faker/lib/faker/internet.ex	/^  def image_url, do: image_url(Faker.random_between(0, 2))$/;"	f
+image_url	deps/faker/lib/faker/internet.ex	/^  defp image_url(0) do$/;"	f
+image_url	deps/faker/lib/faker/internet.ex	/^  defp image_url(1) do$/;"	f
+image_url	deps/faker/lib/faker/internet.ex	/^  defp image_url(2) do$/;"	f
+importe	lib/facturas/factura.ex	/^  def importe(factura, importe) do$/;"	f
+inicio	lib/facturas.ex	/^  defdelegate inicio(n), to: Facturas.CLI, as: :main$/;"	d
+ip_v4_address	deps/faker/lib/faker/internet.ex	/^  def ip_v4_address do$/;"	f
+ip_v6_address	deps/faker/lib/faker/internet.ex	/^  def ip_v6_address do$/;"	f
+irpf	lib/facturas/factura.ex	/^  def irpf(factura, irpf) do$/;"	f
+irpf	lib/facturas/facturas_list.ex	/^  def irpf(%FacturasList{ id: _id, lista: lista}) do$/;"	f
+isbn	deps/faker/lib/faker/code.ex	/^  defdelegate isbn, to: Faker.Code, as: :isbn10$/;"	d
+isbn10	deps/faker/lib/faker/code.ex	/^  def isbn10 do$/;"	f
+isbn13	deps/faker/lib/faker/code.ex	/^  def isbn13 do$/;"	f
+issn	deps/faker/lib/faker/code.ex	/^  def issn do$/;"	f
+iva	lib/facturas/factura.ex	/^  def iva(factura, iva) do$/;"	f
+iva	lib/facturas/facturas_list.ex	/^  def iva(%FacturasList{ id: _id, lista: lista}) do$/;"	f
+join	deps/faker/lib/faker/util.ex	/^  def join(n, joiner \\\\ "", fun) do$/;"	f
+landline_number	deps/faker/lib/faker/phone/en_gb.ex	/^  def landline_number do$/;"	f
+lat_to_bits	deps/faker/lib/faker/address.ex	/^  defp lat_to_bits(lat, position) do$/;"	f
+latitude	deps/faker/lib/faker/address.ex	/^  def latitude do$/;"	f
+letter	deps/faker/lib/faker.ex	/^  defp letter do$/;"	f
+letter	deps/faker/lib/faker/blockchain/bitcoin.ex	/^  defp letter(val) do$/;"	f
+letter	deps/faker/lib/faker/util/en.ex	/^  def letter do$/;"	f
+list	deps/faker/lib/faker/util.ex	/^  def list(n, fun) when is_function(fun, 0) do$/;"	f
+list	deps/faker/lib/faker/util.ex	/^  def list(n, fun) when is_function(fun, 1) do$/;"	f
+list_to_hex_str	deps/faker/lib/faker/uuid.ex	/^  defp list_to_hex_str([]) do$/;"	f
+list_to_hex_str	deps/faker/lib/faker/uuid.ex	/^  defp list_to_hex_str([head | tail]) do$/;"	f
+lista no pagadas no vacia	test/facturas_test.exs	/^  test "lista no pagadas no vacia" do$/;"	t
+lista no pagadas vacia	test/facturas_test.exs	/^  test "lista no pagadas vacia" do$/;"	t
+lista pagadas no vacia	test/facturas_test.exs	/^  test "lista pagadas no vacia" do$/;"	t
+lista pagadas vacia	test/facturas_test.exs	/^  test "lista pagadas vacia" do$/;"	t
+load	lib/facturas/facturas_file.ex	/^  def load(file) do$/;"	f
+locale	deps/faker/lib/faker.ex	/^  def locale do$/;"	f
+locale	deps/faker/lib/faker.ex	/^  def locale(lang) when is_atom(lang) do$/;"	f
+localize	deps/faker/lib/faker.ex	/^  defmacro localize(function) do$/;"	a
+lon_to_bits	deps/faker/lib/faker/address.ex	/^  defp lon_to_bits(lon, position) do$/;"	f
+longitude	deps/faker/lib/faker/address.ex	/^  def longitude do$/;"	f
+lower_letter	deps/faker/lib/faker/util/en.ex	/^  def lower_letter do$/;"	f
+mac_address	deps/faker/lib/faker/internet.ex	/^  def mac_address do$/;"	f
+main	lib/facturas/cli.ex	/^  def main(_) do$/;"	f
+mime_type	deps/faker/lib/faker/file.ex	/^  def mime_type do$/;"	f
+mime_type	deps/faker/lib/faker/file.ex	/^  def mime_type(category) do$/;"	f
+mlocale	deps/faker/lib/faker.ex	/^  def mlocale do$/;"	f
+mobile_number	deps/faker/lib/faker/phone/en_gb.ex	/^  defdelegate mobile_number, to: __MODULE__, as: :cell_number$/;"	d
+naivedatetime_to_datetime	deps/faker/lib/faker/datetime.ex	/^  defp naivedatetime_to_datetime(naivedatetime) do$/;"	f
+name	deps/faker/lib/faker/company/en.ex	/^  def name, do: name(Faker.random_between(0, 2))$/;"	f
+name	deps/faker/lib/faker/company/en.ex	/^  defp name(0), do: "#{Name.last_name()} #{suffix()}"$/;"	f
+name	deps/faker/lib/faker/company/en.ex	/^  defp name(1), do: "#{Name.last_name()}-#{Name.last_name()}"$/;"	f
+name	deps/faker/lib/faker/company/en.ex	/^  defp name(2) do$/;"	f
+name	deps/faker/lib/faker/name/en.ex	/^  def name, do: name(Faker.random_between(0, 9))$/;"	f
+name	deps/faker/lib/faker/name/en.ex	/^  defp name(0), do: "#{prefix()} #{first_name()} #{last_name()} #{suffix()}"$/;"	f
+name	deps/faker/lib/faker/name/en.ex	/^  defp name(1), do: "#{prefix()} #{first_name()} #{last_name()}"$/;"	f
+name	deps/faker/lib/faker/name/en.ex	/^  defp name(2), do: "#{first_name()} #{last_name()} #{suffix()}"$/;"	f
+name	deps/faker/lib/faker/name/en.ex	/^  defp name(n) when is_integer(n) do$/;"	f
+name	deps/faker/lib/faker/name/es.ex	/^  def name, do: name(Faker.random_between(0, 9))$/;"	f
+name	deps/faker/lib/faker/name/es.ex	/^  defp name(0), do: "#{prefix()} #{first_name()} #{last_name()} #{suffix()}"$/;"	f
+name	deps/faker/lib/faker/name/es.ex	/^  defp name(1), do: "#{prefix()} #{first_name()} #{last_name()}"$/;"	f
+name	deps/faker/lib/faker/name/es.ex	/^  defp name(2), do: "#{first_name()} #{last_name()} #{suffix()}"$/;"	f
+name	deps/faker/lib/faker/name/es.ex	/^  defp name(n) when is_integer(n) do$/;"	f
+name	deps/faker/lib/faker/name/it.ex	/^  def name, do: name(Faker.random_between(0, 9))$/;"	f
+name	deps/faker/lib/faker/name/it.ex	/^  defp name(0), do: "#{prefix()} #{first_name()} #{last_name()}"$/;"	f
+name	deps/faker/lib/faker/name/it.ex	/^  defp name(_), do: "#{first_name()} #{last_name()}"$/;"	f
+name	deps/faker/lib/faker/name/pt_br.ex	/^  def name, do: name(Faker.random_between(0, 9))$/;"	f
+name	deps/faker/lib/faker/name/pt_br.ex	/^  defp name(0), do: "#{prefix()} #{first_name()} #{last_name()} #{suffix()}"$/;"	f
+name	deps/faker/lib/faker/name/pt_br.ex	/^  defp name(1), do: "#{prefix()} #{first_name()} #{last_name()}"$/;"	f
+name	deps/faker/lib/faker/name/pt_br.ex	/^  defp name(2), do: "#{first_name()} #{last_name()} #{suffix()}"$/;"	f
+name	deps/faker/lib/faker/name/pt_br.ex	/^  defp name(n) when is_integer(n) do$/;"	f
+name	deps/faker/lib/faker/superhero/en.ex	/^  def name, do: name(Faker.random_between(0, 9))$/;"	f
+name	deps/faker/lib/faker/superhero/en.ex	/^  defp name(0), do: "#{prefix()} #{descriptor()} #{suffix()}"$/;"	f
+name	deps/faker/lib/faker/superhero/en.ex	/^  defp name(1), do: "#{prefix()} #{descriptor()}"$/;"	f
+name	deps/faker/lib/faker/superhero/en.ex	/^  defp name(2), do: "#{descriptor()} #{suffix()}"$/;"	f
+name	deps/faker/lib/faker/superhero/en.ex	/^  defp name(n) when is_integer(n), do: "#{descriptor()}"$/;"	f
+name	deps/faker/lib/faker/team/en.ex	/^  def name, do: "#{Address.state()} #{creature()}"$/;"	f
+name	deps/faker/lib/faker/team/pt_br.ex	/^  def name, do: "#{creature()} de #{Address.state()}"$/;"	f
+new	lib/facturas/factura.ex	/^  def new(), do: %Factura{}$/;"	f
+new	lib/facturas/facturas_file.ex	/^  def new() do$/;"	f
+new	lib/facturas/facturas_file.ex	/^  def new(file, list) do$/;"	f
+new	lib/facturas/facturas_list.ex	/^  def new() do$/;"	f
+new_name_file	lib/facturas/facturas_file.ex	/^  def new_name_file(_name) do$/;"	f
+new_name_file	lib/facturas/facturas_file.ex	/^  def new_name_file(name, ext) do$/;"	f
+no_pagadas	lib/facturas/facturas_list.ex	/^  def no_pagadas(%FacturasList{ id: id, lista: lista}) do$/;"	f
+npad	deps/faker/lib/faker/blockchain/bitcoin.ex	/^  defp npad(addr, <<0>> <> rest), do: npad("1" <> addr, rest)$/;"	f
+npad	deps/faker/lib/faker/blockchain/bitcoin.ex	/^  defp npad(addr, _), do: addr$/;"	f
+number	deps/faker/lib/faker/phone/en_gb.ex	/^  def number do$/;"	f
+number_prefix	deps/faker/lib/faker/phone/en_gb.ex	/^  defp number_prefix do$/;"	f
+package	deps/faker/mix.exs	/^  defp package do$/;"	f
+pagada	lib/facturas/factura.ex	/^  def pagada(factura, pagada) do$/;"	f
+pagada?	lib/facturas/factura.ex	/^  def pagada?(factura) do$/;"	f
+pagadas	lib/facturas/facturas_file.ex	/^  def pagadas(%FacturasFile{file: file, facturas_list: facturas} = _facturas_file) do$/;"	f
+pagadas	lib/facturas/facturas_list.ex	/^  def pagadas(%FacturasList{ id: id, lista: lista}) do$/;"	f
+paragraph	deps/faker/lib/faker/lorem.ex	/^  def paragraph(first..last) do$/;"	f
+paragraph	deps/faker/lib/faker/lorem.ex	/^  def paragraph(num) do$/;"	f
+paragraph	deps/faker/lib/faker/lorem.ex	/^  def paragraph(range \\\\ 2..5)$/;"	f
+paragraphs	deps/faker/lib/faker/lorem.ex	/^  def paragraphs(first..last) do$/;"	f
+paragraphs	deps/faker/lib/faker/lorem.ex	/^  def paragraphs(num) do$/;"	f
+paragraphs	deps/faker/lib/faker/lorem.ex	/^  def paragraphs(range \\\\ 2..5)$/;"	f
+parse_args	lib/facturas/cli.ex	/^  def parse_args(argv) do$/;"	f
+phone	deps/faker/lib/faker/phone/en_us.ex	/^  def phone do$/;"	f
+phone	deps/faker/lib/faker/phone/en_us.ex	/^  defp phone(0), do: "(#{area_code()}) #{exchange_code()}-#{subscriber_number()}"$/;"	f
+phone	deps/faker/lib/faker/phone/en_us.ex	/^  defp phone(1), do: "#{area_code()}\/#{exchange_code()}-#{subscriber_number()}"$/;"	f
+phone	deps/faker/lib/faker/phone/en_us.ex	/^  defp phone(_) do$/;"	f
+pick	deps/faker/lib/faker/file.ex	/^  defp pick(list) do$/;"	f
+pick	deps/faker/lib/faker/util.ex	/^  def pick(enum) do$/;"	f
+pizza	deps/faker/lib/faker/pizza.ex	/^  def pizza, do: pizza(Faker.random_between(1, 30))$/;"	f
+pizza	deps/faker/lib/faker/pizza.ex	/^  defp pizza(_n), do: "#{size_or_inches()} #{combo()}"$/;"	f
+pizza	deps/faker/lib/faker/pizza.ex	/^  defp pizza(n) when n <= 10,$/;"	f
+pizza	deps/faker/lib/faker/pizza.ex	/^  defp pizza(n) when n <= 15, do: "#{size_or_inches()} #{style()} #{combo()}"$/;"	f
+pizza	deps/faker/lib/faker/pizza.ex	/^  defp pizza(n) when n <= 5, do: "#{size_or_inches()} with #{toppings_sentence(n)}"$/;"	f
+pizzas	deps/faker/lib/faker/pizza.ex	/^  def pizzas(first..last) do$/;"	f
+pizzas	deps/faker/lib/faker/pizza.ex	/^  def pizzas(num) do$/;"	f
+pizzas	deps/faker/lib/faker/pizza.ex	/^  def pizzas(range \\\\ 2..5)$/;"	f
+postcode	deps/faker/lib/faker/address.ex	/^  defdelegate postcode, to: __MODULE__, as: :zip_code$/;"	d
+price	deps/faker/lib/faker/commerce.ex	/^  def price do$/;"	f
+print_help_message	lib/facturas/cli.ex	/^  defp print_help_message do$/;"	f
+process	lib/facturas/cli.ex	/^  def process(:help) do$/;"	f
+process	lib/facturas/cli.ex	/^  def process(:list) do$/;"	f
+process	lib/facturas/cli.ex	/^  def process({:file, name}) do$/;"	f
+process	lib/facturas/cli.ex	/^  def process({:options, opts}) do$/;"	f
+product_name	deps/faker/lib/faker/commerce/en.ex	/^  def product_name, do: product_name(Faker.random_between(0, 2))$/;"	f
+product_name	deps/faker/lib/faker/commerce/en.ex	/^  defp product_name(0) do$/;"	f
+product_name	deps/faker/lib/faker/commerce/en.ex	/^  defp product_name(1), do: "#{product_name_adjective()} #{product_name_product()}"$/;"	f
+product_name	deps/faker/lib/faker/commerce/en.ex	/^  defp product_name(2), do: "#{product_name_material()} #{product_name_product()}"$/;"	f
+project	deps/faker/mix.exs	/^  def project do$/;"	f
+project	mix.exs	/^  def project do$/;"	f
+random_bban	deps/faker/lib/faker/code/iban.ex	/^  defp random_bban([]), do: ""$/;"	f
+random_bban	deps/faker/lib/faker/code/iban.ex	/^  defp random_bban([entry | tail]), do: random_bban(entry) <> random_bban(tail)$/;"	f
+random_bban	deps/faker/lib/faker/code/iban.ex	/^  defp random_bban([entry]), do: random_bban(entry)$/;"	f
+random_bban	deps/faker/lib/faker/code/iban.ex	/^  defp random_bban(n, type) do$/;"	f
+random_bban	deps/faker/lib/faker/code/iban.ex	/^  defp random_bban({:a, n}), do: random_bban(n, @alpha)$/;"	f
+random_bban	deps/faker/lib/faker/code/iban.ex	/^  defp random_bban({:c, n}), do: random_bban(n, @alpha_numeric)$/;"	f
+random_bban	deps/faker/lib/faker/code/iban.ex	/^  defp random_bban({:n, n}), do: random_bban(n, @numeric)$/;"	f
+random_between	deps/faker/lib/faker.ex	/^  def random_between(left, right) do$/;"	f
+random_between	deps/faker/lib/faker/random.ex	/^      def random_between(left, right) do$/;"	f
+random_between	deps/faker/lib/faker/random/test.ex	/^  def random_between(left, right) do$/;"	f
+random_bytes	deps/faker/lib/faker.ex	/^  def random_bytes(total) do$/;"	f
+random_bytes	deps/faker/lib/faker/random.ex	/^      def random_bytes(total) do$/;"	f
+random_bytes	deps/faker/lib/faker/random/test.ex	/^  def random_bytes(total) do$/;"	f
+random_float	deps/faker/lib/faker/beer.ex	/^  defp random_float do$/;"	f
+random_numbers_until	deps/faker/lib/faker/phone/en_gb.ex	/^  defp random_numbers_until(out, count) do$/;"	f
+random_uniform	deps/faker/lib/faker.ex	/^  def random_uniform do$/;"	f
+random_uniform	deps/faker/lib/faker/random.ex	/^      def random_uniform do$/;"	f
+random_uniform	deps/faker/lib/faker/random/test.ex	/^  def random_uniform do$/;"	f
+read	lib/facturas/facturas_file.ex	/^  def read(file) do$/;"	f
+receive_command	lib/facturas/cli.ex	/^  defp receive_command(facturas \\\\ nil) do$/;"	f
+remove_special_characters	deps/faker/lib/faker/internet.ex	/^  defp remove_special_characters(string) do$/;"	f
+ret	deps/faker/lib/faker/blockchain/bitcoin.ex	/^  defp ret(_, acc), do: acc$/;"	f
+ret	deps/faker/lib/faker/blockchain/bitcoin.ex	/^  defp ret(val), do: ret(round(val), "")$/;"	f
+ret	deps/faker/lib/faker/blockchain/bitcoin.ex	/^  defp ret(val, acc) when val > 0 do$/;"	f
+rgb_decimal	deps/faker/lib/faker/color.ex	/^  def rgb_decimal do$/;"	f
+rgb_hex	deps/faker/lib/faker/color.ex	/^  def rgb_hex do$/;"	f
+run	lib/facturas/cli.ex	/^  def run(argv) do$/;"	f
+safe_email	deps/faker/lib/faker/internet.ex	/^  def safe_email do$/;"	f
+sample	deps/faker/lib/faker/code/iban.ex	/^  defp sample(list) do$/;"	f
+sample_list	deps/faker/lib/faker/code/iban.ex	/^  defp sample_list(n, list) do$/;"	f
+sample_uniq	deps/faker/lib/faker/util.ex	/^  def sample_uniq(count, sampler, acc \\\\ MapSet.new())$/;"	f
+sampler	deps/faker/lib/faker.ex	/^  defmacro sampler(name, data) do$/;"	a
+samplerp	deps/faker/lib/faker.ex	/^  defmacro samplerp(name, data) do$/;"	a
+save_csv	lib/facturas/facturas_file.ex	/^  def save_csv( %FacturasFile{file: file, facturas_list: facturas}) do$/;"	f
+secondary_address	deps/faker/lib/faker/address/en.ex	/^  def secondary_address do$/;"	f
+secondary_address	deps/faker/lib/faker/address/es.ex	/^  def secondary_address do$/;"	f
+secondary_address	deps/faker/lib/faker/address/it.ex	/^  def secondary_address do$/;"	f
+semver	deps/faker/lib/faker/app.ex	/^  def semver(opts \\\\ []) do$/;"	f
+semver_reformat_bad_luck	deps/faker/lib/faker/app.ex	/^  defp semver_reformat_bad_luck($/;"	f
+semver_reformat_bad_luck	deps/faker/lib/faker/app.ex	/^  defp semver_reformat_bad_luck(<<"0.0", rest::binary>>) do$/;"	f
+semver_reformat_bad_luck	deps/faker/lib/faker/app.ex	/^  defp semver_reformat_bad_luck(<<first::utf8, ".0", second::utf8, rest::binary>>)$/;"	f
+semver_reformat_bad_luck	deps/faker/lib/faker/app.ex	/^  defp semver_reformat_bad_luck(version), do: version$/;"	f
+sentence	deps/faker/lib/faker/lorem.ex	/^  def sentence(first..last) do$/;"	f
+sentence	deps/faker/lib/faker/lorem.ex	/^  def sentence(num) do$/;"	f
+sentence	deps/faker/lib/faker/lorem.ex	/^  def sentence(num, mark) when is_integer(num) and is_binary(mark) do$/;"	f
+sentence	deps/faker/lib/faker/lorem.ex	/^  def sentence(range \\\\ 4..10)$/;"	f
+sentences	deps/faker/lib/faker/lorem.ex	/^  def sentences(first..last) do$/;"	f
+sentences	deps/faker/lib/faker/lorem.ex	/^  def sentences(num) do$/;"	f
+sentences	deps/faker/lib/faker/lorem.ex	/^  def sentences(range \\\\ 2..5)$/;"	f
+serial	deps/faker/lib/faker/gov/us.ex	/^  defp serial, do: "#{Faker.random_between(1, 9999)}" |> String.pad_leading(4, "0")$/;"	f
+set	deps/faker/lib/faker/avatar.ex	/^  defp set do$/;"	f
+set_seed	deps/faker/lib/faker/random/test.ex	/^  defp set_seed([]) do$/;"	f
+set_seed	deps/faker/lib/faker/random/test.ex	/^  defp set_seed(_) do$/;"	f
+size_or_inches	deps/faker/lib/faker/pizza.ex	/^  def size_or_inches, do: size_or_inches(Faker.random_between(0, 1))$/;"	f
+size_or_inches	deps/faker/lib/faker/pizza.ex	/^  defp size_or_inches(0), do: size()$/;"	f
+size_or_inches	deps/faker/lib/faker/pizza.ex	/^  defp size_or_inches(1), do: inches()$/;"	f
+slug	deps/faker/lib/faker/internet.ex	/^  def slug do$/;"	f
+slug	deps/faker/lib/faker/internet.ex	/^  def slug(words) do$/;"	f
+slug	deps/faker/lib/faker/internet.ex	/^  def slug(words, glue) do$/;"	f
+ssn	deps/faker/lib/faker/gov/us.ex	/^  def ssn do$/;"	f
+start	deps/faker/lib/faker.ex	/^  def start do$/;"	f
+start	deps/faker/lib/faker.ex	/^  def start(lang) when is_atom(lang) do$/;"	f
+state	deps/faker/lib/faker/address/it.ex	/^  def state, do: region()$/;"	f
+state_abbr	deps/faker/lib/faker/address/it.ex	/^  def state_abbr, do: ""$/;"	f
+std_separator	deps/faker/lib/faker/phone/en_us.ex	/^  defp std_separator, do: Enum.at(["-", ".", ""], Faker.random_between(0, 2))$/;"	f
+stop_code_word	deps/faker/lib/faker/nato.ex	/^  def stop_code_word, do: "STOP"$/;"	f
+street_address	deps/faker/lib/faker/address.ex	/^  def street_address do$/;"	f
+street_address	deps/faker/lib/faker/address.ex	/^  def street_address(_), do: street_address()$/;"	f
+street_address	deps/faker/lib/faker/address.ex	/^  def street_address(true), do: street_address() <> " " <> secondary_address()$/;"	f
+street_address	deps/faker/lib/faker/address/en.ex	/^  def street_address do$/;"	f
+street_address	deps/faker/lib/faker/address/en.ex	/^  def street_address(_), do: street_address()$/;"	f
+street_address	deps/faker/lib/faker/address/en.ex	/^  def street_address(true), do: street_address() <> " " <> secondary_address()$/;"	f
+street_address	deps/faker/lib/faker/address/es.ex	/^  def street_address do$/;"	f
+street_address	deps/faker/lib/faker/address/es.ex	/^  def street_address(_), do: street_address()$/;"	f
+street_address	deps/faker/lib/faker/address/es.ex	/^  def street_address(true), do: street_address() <> " " <> secondary_address()$/;"	f
+street_address	deps/faker/lib/faker/address/it.ex	/^  def street_address do$/;"	f
+street_address	deps/faker/lib/faker/address/it.ex	/^  def street_address(_), do: street_address()$/;"	f
+street_address	deps/faker/lib/faker/address/it.ex	/^  def street_address(true), do: street_address() <> secondary_address()$/;"	f
+street_name	deps/faker/lib/faker/address.ex	/^  def street_name do$/;"	f
+street_name	deps/faker/lib/faker/address.ex	/^  defp street_name(0), do: "#{Name.first_name()} #{street_suffix()}"$/;"	f
+street_name	deps/faker/lib/faker/address.ex	/^  defp street_name(1), do: "#{Name.last_name()} #{street_suffix()}"$/;"	f
+street_name	deps/faker/lib/faker/address/en.ex	/^  def street_name do$/;"	f
+street_name	deps/faker/lib/faker/address/en.ex	/^  defp street_name(0), do: "#{Name.first_name()} #{street_suffix()}"$/;"	f
+street_name	deps/faker/lib/faker/address/en.ex	/^  defp street_name(1), do: "#{Name.last_name()} #{street_suffix()}"$/;"	f
+street_name	deps/faker/lib/faker/address/en.ex	/^  defp street_name(2), do: "#{Name.last_name()} #{Name.first_name()} #{street_suffix()}"$/;"	f
+street_name	deps/faker/lib/faker/address/es.ex	/^  def street_name do$/;"	f
+street_name	deps/faker/lib/faker/address/es.ex	/^  defp street_name(0), do: "#{Name.first_name()} #{street_suffix()}"$/;"	f
+street_name	deps/faker/lib/faker/address/es.ex	/^  defp street_name(1), do: "#{Name.last_name()} #{street_suffix()}"$/;"	f
+street_name	deps/faker/lib/faker/address/es.ex	/^  defp street_name(2), do: "#{Name.last_name()} #{Name.first_name()} #{street_suffix()}"$/;"	f
+street_name	deps/faker/lib/faker/address/it.ex	/^  def street_name do$/;"	f
+street_name	deps/faker/lib/faker/address/it.ex	/^  defp street_name(0), do: "#{street_prefix()} #{Faker.Name.It.first_name()}"$/;"	f
+street_name	deps/faker/lib/faker/address/it.ex	/^  defp street_name(1), do: "#{street_prefix()} #{Faker.Name.It.last_name()}"$/;"	f
+street_name	deps/faker/lib/faker/address/it.ex	/^  defp street_name(2),$/;"	f
+street_name	deps/faker/lib/faker/address/it.ex	/^  defp street_name(3), do: "#{street_prefix()} #{country()}"$/;"	f
+street_name	deps/faker/lib/faker/address/it.ex	/^  defp street_name(4), do: "#{street_prefix()} #{region()}"$/;"	f
+street_name	deps/faker/lib/faker/address/it.ex	/^  defp street_name(5), do: "#{street_prefix()} #{province()}"$/;"	f
+subscriber_number	deps/faker/lib/faker/phone/en_us.ex	/^  def subscriber_number(n) when is_integer(n) do$/;"	f
+subscriber_number	deps/faker/lib/faker/phone/en_us.ex	/^  def subscriber_number, do: subscriber_number(4)$/;"	f
+title	deps/faker/lib/faker/name/en.ex	/^  def title do$/;"	f
+to_geobase32	deps/faker/lib/faker/address.ex	/^  defp to_geobase32(bits) do$/;"	f
+to_hex	deps/faker/lib/faker/uuid.ex	/^  defp to_hex(i) when i < 10 do$/;"	f
+to_hex	deps/faker/lib/faker/uuid.ex	/^  defp to_hex(i) when i >= 10 and i < 16 do$/;"	f
+to_hex_str	deps/faker/lib/faker/uuid.ex	/^  defp to_hex_str(n) when n < 256 do$/;"	f
+to_sentence	deps/faker/lib/faker/util.ex	/^  def to_sentence(items) do$/;"	f
+to_sentence	deps/faker/lib/faker/util/en.ex	/^  def to_sentence([]), do: ""$/;"	f
+to_sentence	deps/faker/lib/faker/util/en.ex	/^  def to_sentence([first | rest]), do: Enum.join(rest, ", ") <> ", and #{first}"$/;"	f
+to_sentence	deps/faker/lib/faker/util/en.ex	/^  def to_sentence([first, second]), do: "#{first} and #{second}"$/;"	f
+to_sentence	deps/faker/lib/faker/util/en.ex	/^  def to_sentence([single]), do: single$/;"	f
+to_timestamp	deps/faker/lib/faker/datetime.ex	/^  defp to_timestamp(datetime) do$/;"	f
+today	lib/facturas/factura.ex	/^  def today(factura) do$/;"	f
+topping	deps/faker/lib/faker/pizza.ex	/^  def topping, do: topping(Faker.random_between(0, 7))$/;"	f
+topping	deps/faker/lib/faker/pizza.ex	/^  defp topping(0), do: cheese()$/;"	f
+topping	deps/faker/lib/faker/pizza.ex	/^  defp topping(1), do: sauce()$/;"	f
+topping	deps/faker/lib/faker/pizza.ex	/^  defp topping(_count), do: vegetable()$/;"	f
+topping	deps/faker/lib/faker/pizza.ex	/^  defp topping(count) when count <= 5, do: meat()$/;"	f
+toppings	deps/faker/lib/faker/pizza.ex	/^  def toppings(first..last) do$/;"	f
+toppings	deps/faker/lib/faker/pizza.ex	/^  def toppings(num) do$/;"	f
+toppings	deps/faker/lib/faker/pizza.ex	/^  def toppings(range \\\\ 2..5)$/;"	f
+toppings_sentence	deps/faker/lib/faker/pizza.ex	/^  defp toppings_sentence(num) do$/;"	f
+total	lib/facturas/facturas_list.ex	/^  def total(%FacturasList{ id: _id, lista: _lista} = lista_fact) do$/;"	f
+total_no_pagadas	lib/facturas/facturas_list.ex	/^  def total_no_pagadas(%FacturasList{ id: _id, lista: _lista} = lista_fact) do$/;"	f
+total_pagadas	lib/facturas/facturas_list.ex	/^  def total_pagadas(%FacturasList{ id: _id, lista: _lista} = lista_fact) do$/;"	f
+unix_between	deps/faker/lib/faker/datetime.ex	/^  defp unix_between(from, to) do$/;"	f
+unquote	deps/faker/lib/faker.ex	/^      def unquote(function)() do$/;"	f
+unquote	deps/faker/lib/faker.ex	/^      def unquote(name)() do$/;"	f
+unquote	deps/faker/lib/faker.ex	/^      defp unquote(name)() do$/;"	f
+upper_letter	deps/faker/lib/faker/util/en.ex	/^  def upper_letter do$/;"	f
+url	deps/faker/lib/faker/internet.ex	/^  def url, do: url(Faker.random_between(0, 1))$/;"	f
+url	deps/faker/lib/faker/internet.ex	/^  defp url(0), do: "http:\/\/#{domain_name()}"$/;"	f
+url	deps/faker/lib/faker/internet.ex	/^  defp url(1), do: "https:\/\/#{domain_name()}"$/;"	f
+user_agent	deps/faker/lib/faker/internet/user_agent.ex	/^  def user_agent do$/;"	f
+user_name	deps/faker/lib/faker/internet.ex	/^  def user_name, do: user_name(Faker.random_between(0, 1))$/;"	f
+user_name	deps/faker/lib/faker/internet.ex	/^  defp user_name(0) do$/;"	f
+user_name	deps/faker/lib/faker/internet.ex	/^  defp user_name(1) do$/;"	f
+uuid_to_string	deps/faker/lib/faker/uuid.ex	/^  defp uuid_to_string(<<u0::32, u1::16, u2::16, u3::16, u4::48>>) do$/;"	f
+v4	deps/faker/lib/faker/uuid.ex	/^  def v4 do$/;"	f
+version	deps/faker/lib/faker/app.ex	/^  def version do$/;"	f
+words	deps/faker/lib/faker/lorem.ex	/^  def words(first..last) do$/;"	f
+words	deps/faker/lib/faker/lorem.ex	/^  def words(num) do$/;"	f
+words	deps/faker/lib/faker/lorem.ex	/^  def words(range \\\\ 3..6)$/;"	f
+year	lib/facturas/facturas_list.ex	/^  def year(%FacturasList{ id: id, lista: lista}, year) do$/;"	f
+year?	lib/facturas/factura.ex	/^  def year?(factura, year) do$/;"	f
+zip	deps/faker/lib/faker/address.ex	/^  defdelegate zip, to: __MODULE__, as: :zip_code$/;"	d
+zip_code	deps/faker/lib/faker/address/en.ex	/^  def zip_code do$/;"	f
+zip_code	deps/faker/lib/faker/address/es.ex	/^  def zip_code do$/;"	f
+zip_code	deps/faker/lib/faker/address/it.ex	/^  def zip_code do$/;"	f
