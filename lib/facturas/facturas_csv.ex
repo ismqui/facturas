@@ -3,9 +3,9 @@ defmodule Facturas.FacturasCSV do
   Module that creates a random csv file using the Faker library
   to have random data. The format for the csv file would be:
 
-    2018-12-19, 1, 2050.65, 21, 7, true, "Servicios informaticos"
-    2018-12-20, 2, 1050.65, 21, 7, true, "Servicios Python"
-    2018-12-21, 3, 2550.65, 21, 7, false, "Servicios Elixir"
+    - 2018-12-19, 1, 2050.65, 21, 7, true, "Servicios informaticos"
+    - 2018-12-20, 2, 1050.65, 21, 7, true, "Servicios Python"
+    - 2018-12-21, 3, 2550.65, 21, 7, false, "Servicios Elixir"
   """
 
   def create_file(val) when is_integer(val) and val > 0 do
