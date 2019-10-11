@@ -19,6 +19,17 @@ defmodule Facturas.FacturasCSV do
     end)
   end
 
+  def create_file2(val) when is_integer(val) and val > 0 do
+    Enum.flat_map(1..val, fn i ->
+      fecha    = Faker.Date.backward(365)
+      precio   = (Faker.Commerce.price * 100) |> Float.round(2)
+      producto = Faker.Commerce.product_name
+      pagado   = Enum.random([true, false])
+
+      [fecha, i, precio, 21, 7, pagado, producto]
+    end)
+  end
+
   @doc """
   In case incorrect argument
   """
