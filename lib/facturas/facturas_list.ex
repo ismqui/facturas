@@ -88,6 +88,11 @@ defmodule Facturas.FacturasList do
       |>Float.round(2)
   end
 
+  def count(%FacturasList{ id: _id, lista: lista}) do
+    lista
+      |>Enum.count()
+  end
+
   def date(%FacturasList{ id: id, lista: lista}, date) do
     lista =
       lista
