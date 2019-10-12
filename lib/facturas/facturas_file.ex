@@ -25,6 +25,16 @@ defmodule Facturas.FacturasFile do
     }
   end
 
+  def info( %FacturasFile{file: file, facturas_list: facturas}) do
+    %{
+       name: file,
+       num_facturas: FacturasList.count(facturas),
+       total: FacturasList.total(facturas),
+       pagado: FacturasList.total_pagadas(facturas),
+       no_pagado: FacturasList.total_no_pagadas(facturas)
+    }
+  end
+
   def read(file) do
     file
     |> File.stream!
