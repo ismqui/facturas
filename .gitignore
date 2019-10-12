@@ -25,3 +25,4 @@ facturas-*.tar
 /facturas
 /facturas.csv
 .env
+tags
