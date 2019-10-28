@@ -14,7 +14,7 @@ defmodule Facturas.FakeData do
   def csv_file(val) when is_integer(val) and val > 0 do
     Enum.each(1..val, fn i ->
       fecha    = Faker.Date.backward(365)
-      precio   = (Faker.Commerce.price * 100) |> Float.round(2)
+      precio   = (Faker.Commerce.price * 101) |> Float.round(2)
       producto = Faker.Commerce.product_name
       pagado   = Enum.random([true, false])
 
@@ -33,7 +33,7 @@ defmodule Facturas.FakeData do
     facturas =
       Enum.into(1..val, [], fn i ->
         fecha    = Faker.Date.backward(365)
-        precio   = (Faker.Commerce.price * 100) |> Float.round(2)
+        precio   = (Faker.Commerce.price * 101) |> Float.round(2)
         producto = Faker.Commerce.product_name
         pagado   = Enum.random([true, false])
 
