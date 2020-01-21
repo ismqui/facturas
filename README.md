@@ -5,7 +5,12 @@
 - Tratamiento de clientes.
 - divide bills in one file per year.
 - Create a user logging
-- Transform into a GenServer
+
+## New
+
+Added GenServer with some synchronous calls.
+
+Facturas.Server.start_link("/path/dir/filename.csv")
 
 ## Installation
 
