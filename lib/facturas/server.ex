@@ -24,6 +24,14 @@ defmodule Facturas.Server do
   def handle_call(:total, _from, state) do
     {:reply, Facturas.FacturasList.total(state), state}
   end
+  
+  def handle_call(:totalpagadas, _from, state) do
+    {:reply, Facturas.FacturasList.total_pagadas(state), state}
+  end
+
+  def handle_call(:totalnopagadas, _from, state) do
+    {:reply, Facturas.FacturasList.total_no_pagadas(state), state}
+  end
 
   def handle_call(:count, _from, state) do
     {:reply, Facturas.FacturasList.count(state), state}
@@ -35,9 +43,11 @@ defmodule Facturas.Server do
 
   ### Client API
 
-  def pagadas,    do: GenServer.call(__MODULE__, :pagadas)
-  def nopagadas,  do: GenServer.call(__MODULE__, :nopagadas)
-  def total,      do: GenServer.call(__MODULE__, :total)
-  def count,      do: GenServer.call(__MODULE__, :count)
-  def year(year), do: GenServer.call(__MODULE__, {:year, year})
+  def pagadas,        do: GenServer.call(__MODULE__, :pagadas)
+  def nopagadas,      do: GenServer.call(__MODULE__, :nopagadas)
+  def total,          do: GenServer.call(__MODULE__, :total)
+  def totalpagadas,   do: GenServer.call(__MODULE__, :totalpagadas)
+  def totalnopagadas, do: GenServer.call(__MODULE__, :totalnopagadas)
+  def count,          do: GenServer.call(__MODULE__, :count)
+  def year(year),     do: GenServer.call(__MODULE__, {:year, year})
 end
